@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+/* 
+    background (azul claro) => #2251b1
+    color => #e2eaf2
+*/
+
+* {font-family: 'Poppins', sans-serif; font-weight: 400; padding: 0; margin: 0;}
+
+html {background-color: #030001;}
+body {background-color: #f2f2f2;}
+
+/* ////////  TELA HOME  //////// */
+#home
+{
+    height: 100vh;
+    width: 100%;
+}
+
+#home .bgstar
+{
+    z-index: 0;
+    background: url('images/bg_04_tiny.jpg') right center no-repeat;
+    background-size: 160%;
+    background-position: -300px;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+#home .bgtop
+{
+    background: url('images/pedra_top_tiny.png') 0px -160px  no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+#home .bg
+{
+    background: url('images/pedra_bottom_tiny.png') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+#home .redes_sociais
+{
+    position: absolute;
+    z-index: 13;
+    display: flex;
+    background-color: #0b1b2c;
+    width: 150px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 0 10px 10px 0;
+    animation-name: redesSociaisMove;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    left: -150px;
+}
+
+@keyframes redesSociaisMove {
+    0%{left: -150px;}
+    100%{left: 0;}
+}
+
+#home .redes_sociais a
+{
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    padding: 0 3px;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@keyframes linkRedesSociaisAparecer {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+#home .redes_sociais svg
+{
+    width: 35px;
+    height: 35px;
+    color: #d1d8df;
+    transition: .1s;
+}
+
+#home .redes_sociais svg:hover {color: #453333;}
+
+#home .menu
+{
+    z-index: 13;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    top: 80px;
+}
+
+#home .menu_mobile {display: none;}
+
+#home .menu a
+{
+    box-sizing: border-box;
+    color: #d1d8df;
+    text-decoration: none;
+    font-size: 15pt;
+    margin: 0 1px;
+    transition: .2s;
+    height: 50px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home .menu a .traco {
+    width: 0px;
+    height: 2px;
+    background-color: #163167;
+}
+
+#home .menu a:hover {color: #ffffff;}
+#home .menu a:hover > .traco {animation: tracoWidth .3s forwards;}
+
+@keyframes tracoWidth {
+    0%{width: 0px;}
+    100%{width: 70%;}
+}
+
+.eu
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    color: #ffffff;
+    position: fixed;
+    z-index: 12;
+    top: 40%;
+    cursor: default;
+    animation-name: aparecerEu;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
+@keyframes aparecerEu {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.eu h1 {font-size: 42pt; font-weight: 600;}
+.eu p {font-size: 15pt; font-weight: 400; color: #ccd1d6; margin-top: -10px;}
+
+#home .arrow
+{
+    color: #f2f2f2;
+    position: absolute;
+    z-index: 14;
+    top: 90%;
+    left: 50%;
+    height: 40px;
+}
+
+#home .arrow svg
+{
+    animation-name: arrowHome;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    cursor: pointer;
+}
+
+@keyframes arrowHome {
+    0%{margin-top: 0;}
+    15%{margin-top: 10px;}
+    30%{margin-top: 0px;}
+    65%{margin-top: 10px;}
+    100%{margin-top: 0px;}
+}
+
+@media (max-width: 700px) {
+    #home .bgstar {background-size: cover;}
+    #home .bg {background-size: cover;}
+    #home .menu a {font-size: 13pt; font-weight: 500;}
+    .eu h1 {font-size: 35pt;}
+    #home .arrow {left: 48%;}
+}
+
+@media (max-width: 600px) {
+    #home .bgtop {display: none;}
+    #home .menu {display: none}
+    #home .bg {background: url('images/pedra_bottom_tiny.png') -850px bottom no-repeat;}
+    .eu h1 {font-size: 30pt;} .eu p {font-size: 13pt; margin-top: 0;}
+    #home .arrow {left: 47%;}
+
+    #home .menu_mobile {display: block;}
+    #home .menu_mobile .button {z-index: 100; display: block; position: fixed; top: 20px; right: 30px;}
+    #home .menu_mobile .button svg {color: #f2f2f2; width: 45px; height: 45px;}
+    #home .menu_mobile .button svg.close {display: none; width: 40px; height: 40px;}
+    #home .menu_mobile .show_menu
+    {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: #030001;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+        flex-direction: column;
+    }
+    #home .menu_mobile .show_menu a
+    {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-size: 17pt;
+        margin: 10px;
+    }
+}
+
+
+
+/* ////////  TELA QUEM SOU  //////// */
+
+#quem_sou
+{
+    z-index: 1;
+    position: relative;
+    margin-top: -100px;
+    padding-top: 40px;
+    width: 100%;
+    background-color: #030001;
+    color: #f2f2f2;
+    height: auto;
+    padding-bottom: 70px;
+}
+
+#quem_sou .title
+{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 50px 0;
+    font-weight: 400;
+    font-size: 28pt;
+}
+
+#quem_sou .content
+{
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    background-color: #030001;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#quem_sou .content .imgQmSou
+{
+    background: url("images/minha_foto.jpg") 0px 0px no-repeat;
+    background-size: contain;
+    width: 250px;
+    height: 250px;
+    border-radius: 400px;
+    background-color: rgb(205, 205, 205);
+    margin: 30px;
+}
+
+#quem_sou .content p {width: 30%; margin: 30px; text-align: justify;}
+#quem_sou .content p span {font-size: 35pt; color: #163167; font-weight: 600;}
+
+#quem_sou .formacoes {width: 70%; margin: 50px auto;}
+#quem_sou .formacoes .title {margin: auto; font-size: 20pt; font-weight: 600; padding: 0;}
+#quem_sou .formacoes .content_formacao {display: flex; margin: 50px 0; justify-content: space-between; align-items: center;}
+#quem_sou .formacoes .content_formacao p {width: 80%; margin: 20px; text-align: justify;}
+#quem_sou .formacoes .content_formacao a {border: .5px solid #f2f2f2; border-radius: 10px; padding: 10px; transition: .1s; box-shadow: 0px 0px 5px #c3c3c3;}
+#quem_sou .formacoes .content_formacao a:hover {border-color: #163167; box-shadow: 0px 0px 5px #556a94;}
+#quem_sou .formacoes .content_formacao strong {font-weight: bold; color: #ffffff;}
+
+#quem_sou .formacoes .content_formacao a .img_formacao
+{
+    width: 150px;
+    height: 75px;
+    background-color: gray;
+    background: url("images/formacoes/ifpa.png") center center no-repeat;
+    background-size: contain;
+    border-radius: 5px;
+    transition: .1s;
+}
+
+#quem_sou .formacoes .content_formacao a:hover > .img_formacao {opacity: .8;}
+
+#quem_sou .formacoes .content_formacao a .img_diploma
+{
+    width: 150px;
+    height: 75px;
+    background-color: gray;
+    background: url("images/formacoes/ifpa.png") center center no-repeat;
+    background-size: contain;
+    border-radius: 5px;
+    transition: .1s;
+}
+
+#quem_sou .formacoes .content_formacao a:hover > .img_diploma {opacity: .8;}
+
+
+.fim_quem_sou {width: 100%; height: 100px; margin-bottom: 120px;}
+.fim_quem_sou svg {width: 100%; height: auto;}
+
+
+@media (max-width: 1000px) {
+    #quem_sou .content p {font-size: 13pt}
+    .formacoes .diploma {display: none;}
+    .formacoes .content_formacao {flex-direction: column; position: relative}
+    #quem_sou .formacoes .content_formacao p {width: 110%; margin: 20px; text-align: center; font-size: 13pt;}
+}
+
+@media (max-width: 800px) {
+    #quem_sou .content {flex-direction: column;}
+    #quem_sou .content p {width: 90%;}
+    #quem_sou .formacoes .content_formacao p {font-size: 11pt;}
+
+}
+
+
+
+/* ////////  TELA TECNOLOGIAS  //////// */
+
+#tecnologias
+{
+    background-color: #251717;
+    padding-top: 70px;
+    margin-top: -170px;
+    border-radius: 0 0 20px 20px;
+}
+#tecnologias h1.title
+{
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 400;
+    font-size: 28pt;
+}
+#tecnologias .carregandoFundo
+{
+    width: 100%;
+    height: 2px;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+#tecnologias .carregandoFundo .carregando
+{
+    height: 2px;
+    background-color: #163167;
+    left: 0%;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes carregandoTecnologiasColorBg {
+    0%{background-color: #163167;}
+    50%{background-color: #163167;}
+    50.01%{background-color: #ffffff;}
+    100%{background-color: #ffffff;}
+}
+
+@keyframes carregandoTecnologias {
+    0%{width: 0px; background-color: #163167;}
+    50%{width: 100%; background-color: #163167;}
+    50.01%{width: 0%; background-color: #ffffff;}
+    100%{width: 100%; background-color: #ffffff;}
+}
+
+#tecnologias .icons
+{
+    height: auto;
+    width: 100%;
+    background-color: #453333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#tecnologias .icons svg
+{
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tecnologias .icons svg.ativado
+{fill: #f2f2f2;}
+
+#tecnologias .text
+{
+    height: auto;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tecnologias .text div
+{
+    display: none;
+    width: 70%;
+    text-align: justify;
+    margin: 40px auto;
+    border-left: 2px solid;
+    padding: 10px 20px;
+}
+
+#tecnologias .text div.textAtivado {display: block; color: #c3bbbb;}
+#tecnologias .text div.textAtivado h1 {font-weight: 600; margin-top: -20px; color: #f2f2f2;}
+#tecnologias .text div.textAtivado a {text-decoration: none; color: #f2f2f2; transition: .1s;}
+#tecnologias .text div.textAtivado a:hover {color: #8d7b7b;}
+
+@media (max-width: 1000px) {#tecnologias{margin-top: -190px;}}
+@media (max-width: 800px) {
+    #tecnologias{margin-top: -210px;}
+    #tecnologias .text div.textAtivado {font-size: 12pt;}
+}
+@media (max-width: 600px) {#tecnologias{margin-top: -220px;}}
+
+
+
+/* ////////  TELA PORTIFÓLIO  //////// */
+
+#portifolio
+{
+    background-color: #f2f2f2;
+    padding: 50px 0;
+}
+
+#portifolio .content
+{
+    height: auto;
+    width: 90%;
+    margin: auto;
+    background-color: #251717;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 800px;
+}
+
+#portifolio .content .content_trabalho
+{
+    width: 100%;
+    border-radius: 15px;
+    background-color: #556a94;
+    display: flex;
+    flex-direction: row;
+}
+
+#portifolio .content .content_trabalho a.link_image {width: 400px; text-decoration: none; color: #f2f2f2;}
+
+#portifolio .content .img_content
+{
+    aspect-ratio: 3 / 4;
+    height: 450px;
+    border-radius: 15px;
+    background: url("images/portifolio/afma_01.png") center center no-repeat;
+    background-size: cover;
+}
+
+#portifolio .content .content_trabalho .text_desc_trabalho {padding: 30px;}
+#portifolio .content .content_trabalho .text_desc_trabalho h2 {font-weight: 600;}
+
+#portifolio .content .mudar_buttons
+{
+    background-color: green;
+    display: flex;
+    margin: 10px auto;
+    height: 50px;
+    width: 123px;
+}
+
+#portifolio .content .mudar_buttons .button
+{
+    background-color: red;
+    width: 60px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#portifolio .content .mudar_buttons .button.anterior {border-radius: 50px 0 0 50px;}
+#portifolio .content .mudar_buttons .button.proximo {border-radius: 0 50px 50px 0;}
+
+#portifolio .content .mudar_buttons .button svg
+{
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 750px) {
+    #portifolio .content .content_trabalho {flex-direction: column; width: 100%;}
+    #portifolio .content .content_trabalho a.link_image {width: 100%;}
+    #portifolio .content .img_content {width: 100%; max-height: 300px}
+    #portifolio .content .content_trabalho .text_desc_trabalho {padding: 20px;}
+    #portifolio .content .content_trabalho .text_desc_trabalho p {margin-top: -20px;}
+}
+
+/*
+#portifolio .trabalho
+{
+    width: 44%;
+    min-width: 200px;
+    margin: 5px 5px;
+    padding: 25px;
+    height: 200px;
+    background-color: #251717;
+    display: flex;
+    border-radius: 20px;
+}
+
+#portifolio .trabalho .img
+{
+    width: 250px;
+    height: 200px;
+    margin-right: 25px;
+    border-radius: 10px;
+    background-color: green;
+    background: url('images/bg_01.jpg') center center no-repeat;
+    object-fit: cover;
+}
+
+#portifolio .siteAfma .img
+{
+    background: url('images/portifolio/afma_01.png') center center no-repeat;
+    background-size: contain;
+}
+*/
+
+
+
+/* ////////  FOOTER  //////// */
+
+footer
+{
+    border-radius: 20px 20px 0 0;
+    min-height: 350px;
+    width: 100%;
+    background-color: #030001;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    padding: 0%;
+    margin: 0;
+}
+
+footer .content_footer_animation
+{
+    position: absolute;
+    left: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 0 5px #11275200;
+    border-radius: 15px;
+    padding: 15px;
+    height: 250px;
+}
+
+footer .content_footer_animation .animation
+{
+    width: 250px;
+    height: 250px;
+}
+
+footer h1.chamada
+{
+    color: #f2f2f2;
+    position: absolute;
+    left: 50px;
+    top: -30px;
+    background-color: #030001;
+    padding: 5px 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+footer a {width: 120px;}
+footer .menu {margin-left: 50px;}
+footer .menu, footer .redes_sociais
+{
+    height: 200px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    color: #f2f2f2;
+    border-left: 1px solid #b8b1b192;
+    padding: 20px;
+    padding-right: 50px;
+}
+
+footer .menu a, footer .redes_sociais a
+{
+    text-decoration: none;
+    color: #163167;
+    margin-top: 2px;
+    transition: .1s;
+}
+
+footer .menu a:hover, footer .redes_sociais a:hover {color: #b8b1b1;}
+
+footer .redes_sociais .email strong {color: #f2f2f2;}
+
+@media (max-width: 900px) {
+    footer .content_footer_animation {left: 30px;}
+    footer .content_footer_animation .animation {width: 200px; height: 200px;}
+}
+
+@media (max-width: 800px) {
+    footer .content_footer_animation {left: 10px;}
+    footer .content_footer_animation .animation {width: 150px; height: 150px;}
+}
+
+@media (max-width: 700px) {
+    footer h1.chamada {left: 0;}
+    footer .content_footer_animation {display: none;}
+    footer {display: block; padding: 30px 0;}
+    footer .menu, footer .redes_sociais
+    {
+        border-bottom: 1px solid #b8b1b192;
+        width: 80%;
+        margin: 0%;
+        margin-top: 30px;
+        margin: 0 auto;
+        border-left: none;
+        padding: 20px 10px;
+        height: auto;
+    }
+    footer .menu {margin-bottom: 30px;}
+}
