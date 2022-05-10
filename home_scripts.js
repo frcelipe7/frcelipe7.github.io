@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuMobileButtonOpen = document.querySelector("#home .menu_mobile .button .open");
     const menuMobileShowLinks = document.querySelector("#home .menu_mobile .show_menu");
     const allLinksMenuMobile = document.querySelectorAll('#home .menu_mobile .show_menu');
-    console.log(allLinksMenuMobile)
 
     allLinksMenuMobile.forEach(link => {
         link.addEventListener('click', scrollToSection);

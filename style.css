@@ -487,9 +487,19 @@ body {background-color: #f2f2f2;}
     aspect-ratio: 3 / 4;
     height: 450px;
     border-radius: 15px;
-    background: url("images/portifolio/afma_01.png") center center no-repeat;
+    background: center center no-repeat;
+    background-image: url("images/portifolio/afma_01.png");
     background-size: cover;
 }
+
+#portifolio .content .img_content[slidingAnterior] {animation: slidingAnterior; animation-duration: .5s;}
+@keyframes slidingAnterior {0% {background: auto center no-repeat; opacity: 1;} 100% {background: -100% center no-repeat; opacity: 0;}}
+
+#portifolio .content .img_content[slidingProximo] {animation: slidingProximo; animation-duration: .5s;}
+@keyframes slidingProximo {0% {background: auto center no-repeat; opacity: 1;} 100% {background: 100% center no-repeat; opacity: 0;}}
+
+@keyframes backgroundOpacity {0% {opacity: 0;} 100% {opacity: 1;}}
+
 
 #portifolio .content .content_trabalho .text_desc_trabalho {padding: 30px;}
 #portifolio .content .content_trabalho .text_desc_trabalho h2 {font-weight: 600;}
