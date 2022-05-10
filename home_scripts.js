@@ -1,5 +1,6 @@
 function scrollToSection(event) {
     event.preventDefault();
+    
     const id = event.target.getAttribute('href');
     const distaceFromTheTop = document.getElementById(id).offsetTop;
 
@@ -67,26 +68,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuMobileButtonClose = document.querySelector('#home .menu_mobile .button .close');
     const menuMobileButtonOpen = document.querySelector("#home .menu_mobile .button .open");
     const menuMobileShowLinks = document.querySelector("#home .menu_mobile .show_menu");
-    const allLinksMenuMobile = document.querySelectorAll('#home .menu_mobile .show_menu');
+    const allLinksMenuMobile = document.querySelectorAll('#home .menu_mobile .show_menu a');
 
     allLinksMenuMobile.forEach(link => {
         link.addEventListener('click', scrollToSection);
+
         link.addEventListener('click', () => {
-            menuMobileShowLinks.style.display = 'none';
+            menuMobileShowLinks.removeAttribute('ativando');
+            menuMobileShowLinks.setAttribute("desativando", '');
+            menuMobileShowLinks.addEventListener('animationend', () => {
+                menuMobileShowLinks.removeAttribute('desativando');
+                menuMobileShowLinks.style.display = "none";
+            });
             menuMobileButtonOpen.style.display = "block";
             menuMobileButtonClose.style.display = "none";
         });
     });
 
     menuMobileButtonOpen.addEventListener("click", () => {
-        menuMobileShowLinks.style.display = 'flex';
+        menuMobileShowLinks.style = "";
+        menuMobileShowLinks.setAttribute("ativando", '');
+        menuMobileShowLinks.addEventListener('animationend', () => {
+            menuMobileShowLinks.style.display = "flex";
+        });
         menuMobileButtonOpen.style.display = "none";
         menuMobileButtonClose.style.display = "block";
 
         menuMobileButtonClose.addEventListener('click', () => {
-            menuMobileShowLinks.style.display = 'none';
+            menuMobileShowLinks.removeAttribute('ativando');
+            menuMobileShowLinks.setAttribute("desativando", '');
+            menuMobileShowLinks.addEventListener('animationend', () => {
+                menuMobileShowLinks.removeAttribute('desativando');
+                menuMobileShowLinks.style.display = "none";
+            });
             menuMobileButtonOpen.style.display = "block";
             menuMobileButtonClose.style.display = "none";
-        })
-    })
+        });
+    });
 });

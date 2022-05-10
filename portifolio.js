@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'https://filhasdomel.github.io/site/',
         'https://cursos.fluencyacademy.io/login',
         'https://play.hbomax.com/page/urn:hbo:page:home',
-    ]
+    ];
     const textsPortifolio = document.querySelectorAll("#portifolio .content .content_trabalho .text_desc_trabalho .content_description_portifolio");
     const imageContent = document.querySelector("#portifolio .content .img_content");
     const buttonsAnteriorProximo = document.querySelectorAll("#portifolio .content .mudar_buttons .button");

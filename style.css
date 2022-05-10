@@ -224,6 +224,19 @@ body {background-color: #f2f2f2;}
         z-index: 99;
         flex-direction: column;
     }
+    #home .menu_mobile .show_menu[ativando] {display: flex; opacity: 0; animation: opacityMenuMobile .3s forwards;}
+    #home .menu_mobile .show_menu[desativando] {opacity: 1; animation: opacityMenuMobileClose .3s;}
+
+    @keyframes opacityMenuMobile {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes opacityMenuMobileClose {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
     #home .menu_mobile .show_menu a
     {
         color: #f2f2f2;
@@ -581,7 +594,7 @@ footer
     border-radius: 20px 20px 0 0;
     min-height: 350px;
     width: 100%;
-    background-color: #030001;
+    background-color: #020914;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -617,7 +630,7 @@ footer h1.chamada
     position: absolute;
     left: 50px;
     top: -30px;
-    background-color: #030001;
+    background-color: #020914;
     padding: 5px 10px;
     border-radius: 10px 10px 0 0;
 }
@@ -639,10 +652,23 @@ footer .menu, footer .redes_sociais
 footer .menu a, footer .redes_sociais a
 {
     text-decoration: none;
-    color: #163167;
+    color: #3c5a96;
     margin-top: 2px;
     transition: .1s;
 }
+
+.developedBy {
+    margin-top: 30px;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 20px 20px 0 0;
+    justify-content: center;
+    display: flex;
+}
+.developedBy a {color: #3c5a96;}
+.developedBy p {margin: 0;}
 
 footer .menu a:hover, footer .redes_sociais a:hover {color: #b8b1b1;}
 
@@ -661,7 +687,7 @@ footer .redes_sociais .email strong {color: #f2f2f2;}
 @media (max-width: 700px) {
     footer h1.chamada {left: 0;}
     footer .content_footer_animation {display: none;}
-    footer {display: block; padding: 30px 0;}
+    footer {display: block; padding: 30px 0; padding-bottom: 0;}
     footer .menu, footer .redes_sociais
     {
         border-bottom: 1px solid #b8b1b192;
