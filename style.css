@@ -519,7 +519,6 @@ body {background-color: #f2f2f2;}
 
 #portifolio .content .mudar_buttons
 {
-    background-color: green;
     display: flex;
     margin: 10px auto;
     height: 50px;
@@ -528,14 +527,17 @@ body {background-color: #f2f2f2;}
 
 #portifolio .content .mudar_buttons .button
 {
-    background-color: red;
+    background-color: #556a94;
     width: 60px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
 }
+
+#portifolio .content .mudar_buttons .button[disabled] {color: #251717; background-color: #163167;}
 
 #portifolio .content .mudar_buttons .button.anterior {border-radius: 50px 0 0 50px;}
 #portifolio .content .mudar_buttons .button.proximo {border-radius: 0 50px 50px 0;}

@@ -15,33 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const linkContentImage = document.querySelector("#portifolio .content .content_trabalho .link_image");
     let index = 0;
 
-    function slideAnterior(index) {
+    function slide(index, attribute) {
         textsPortifolio.forEach(desativarText => {desativarText.style.display = 'none';});
         const image = listaImagens[index];
         const text = textsPortifolio[index];
         linkContentImage.href = listaLinks[index];
         text.style.display = 'block';
         imageContent.style.animation = '';
-        imageContent.setAttribute("slidingAnterior", '');
+        imageContent.setAttribute(attribute, '');
         imageContent.addEventListener('animationend', () => {
-            imageContent.removeAttribute('slidingAnterior');
-            imageContent.style.backgroundImage = `url("images/portifolio/${image}")`;
-            imageContent.style.animation = 'backgroundOpacity';
-            imageContent.style.animationDalay = '.5s';
-            imageContent.style.animationDuration = '.5s';
-        });
-    };
-    
-    function slideProximo(index) {
-        textsPortifolio.forEach(desativarText => {desativarText.style.display = 'none';});
-        const image = listaImagens[index];
-        const text = textsPortifolio[index];
-        linkContentImage.href = listaLinks[index];
-        text.style.display = 'block';
-        imageContent.style.animation = '';
-        imageContent.setAttribute("slidingProximo", '');
-        imageContent.addEventListener('animationend', () => {
-            imageContent.removeAttribute('slidingProximo');
+            imageContent.removeAttribute(attribute);
             imageContent.style.backgroundImage = `url("images/portifolio/${image}")`;
             imageContent.style.animation = 'backgroundOpacity';
             imageContent.style.animationDalay = '.5s';
@@ -51,8 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
     buttonsAnteriorProximo.forEach(button => {
         button.addEventListener("click", () => {
-            if (button.classList[0] == "proximo" && index < listaImagens.length - 1) index++, slideProximo(index);
-            if (button.classList[0] == "anterior" && index > 0) index--, slideAnterior(index);
+            if (button.classList[0] == "proximo" && index < listaImagens.length - 1) index++, slide(index, 'slidingProximo');
+            if (button.classList[0] == "anterior" && index > 0) index--, slide(index, 'slidingAnterior');
+
+            buttonsAnteriorProximo.forEach(ativarButton => ativarButton.disabled = false)
+            if (index == 0) buttonsAnteriorProximo.forEach(desativarButton => {
+                if (desativarButton.classList[0] == 'anterior') desativarButton.disabled = true;
+            });
+            if (index == listaImagens.length - 1) buttonsAnteriorProximo.forEach(desativarButton => {
+                if (desativarButton.classList[0] == 'proximo') desativarButton.disabled = true;
+            });
         });
     });
 });
