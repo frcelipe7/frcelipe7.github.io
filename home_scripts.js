@@ -14,11 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgFundoEstrela = document.querySelector("#home .bgstar");
     const menuTopo = document.querySelector("#home .menu");
     const euInicio = document.querySelector("#home .eu");
+    let opacityEu = 1;
 
     document.addEventListener("scroll", () => {
         let backgroundPosition = 300 + parseFloat(`${window.scrollY * 0.3}`);
         if (window.innerWidth > 699) imgFundoEstrela.style.backgroundPosition = `-${backgroundPosition}px`;
-        let opacityEu = 1 - parseFloat(`${window.scrollY/250}`);
+        opacityEu = 1 - parseFloat(`${window.scrollY/250}`)
 
         if (window.pageYOffset >= 80) {
             if (window.innerWidth > 650)
@@ -69,6 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuMobileButtonOpen = document.querySelector("#home .menu_mobile .button .open");
     const menuMobileShowLinks = document.querySelector("#home .menu_mobile .show_menu");
     const allLinksMenuMobile = document.querySelectorAll('#home .menu_mobile .show_menu a');
+
+    //document.addEventListener("scroll", () => {
+        //if (window.pageYOffset >= document.getElementById("portifolio").offsetTop - 40) menuMobileButtonOpen.style.fill = "#251717";
+        //else menuMobileButtonOpen.style.fill = "#f2f2f2";
+    //});
 
     allLinksMenuMobile.forEach(link => {
         link.addEventListener('click', scrollToSection);

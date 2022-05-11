@@ -7,7 +7,23 @@
 * {font-family: 'Poppins', sans-serif; font-weight: 400; padding: 0; margin: 0;}
 
 html {background-color: #030001;}
-body {background-color: #f2f2f2;}
+body {background-color: #0b1b2c;}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #020914;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #3c5a96;
+    border-radius: 20px;
+    border: 3px solid #3c5a96;
+}
+
+
 
 /* ////////  TELA HOME  //////// */
 #home
@@ -65,10 +81,7 @@ body {background-color: #f2f2f2;}
     left: -150px;
 }
 
-@keyframes redesSociaisMove {
-    0%{left: -150px;}
-    100%{left: 0;}
-}
+@keyframes redesSociaisMove {0%{left: -150px;} 100%{left: 0;}}
 
 #home .redes_sociais a
 {
@@ -79,11 +92,6 @@ body {background-color: #f2f2f2;}
     opacity: 0;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-}
-
-@keyframes linkRedesSociaisAparecer {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
 }
 
 #home .redes_sociais svg
@@ -125,19 +133,12 @@ body {background-color: #f2f2f2;}
     flex-direction: column;
 }
 
-#home .menu a .traco {
-    width: 0px;
-    height: 2px;
-    background-color: #163167;
-}
+#home .menu a .traco {width: 0px; height: 2px; background-color: #163167;}
 
 #home .menu a:hover {color: #ffffff;}
 #home .menu a:hover > .traco {animation: tracoWidth .3s forwards;}
 
-@keyframes tracoWidth {
-    0%{width: 0px;}
-    100%{width: 70%;}
-}
+@keyframes tracoWidth {0%{width: 0px;} 100%{width: 70%;}}
 
 .eu
 {
@@ -152,17 +153,14 @@ body {background-color: #f2f2f2;}
     z-index: 12;
     top: 40%;
     cursor: default;
-    animation-name: aparecerEu;
+    animation-name: linkRedesSociaisAparecer;
     animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-delay: .5s;
     opacity: 0;
 }
 
-@keyframes aparecerEu {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
+@keyframes linkRedesSociaisAparecer {0%{opacity: 0;} 100%{opacity: 1;}}
 
 .eu h1 {font-size: 42pt; font-weight: 600;}
 .eu p {font-size: 15pt; font-weight: 400; color: #ccd1d6; margin-top: -10px;}
@@ -210,7 +208,7 @@ body {background-color: #f2f2f2;}
 
     #home .menu_mobile {display: block;}
     #home .menu_mobile .button {z-index: 100; display: block; position: fixed; top: 20px; right: 30px;}
-    #home .menu_mobile .button svg {color: #f2f2f2; width: 45px; height: 45px;}
+    #home .menu_mobile .button svg {color: #f2f2f2; width: 45px; height: 45px; transition: .3s;}
     #home .menu_mobile .button svg.close {display: none; width: 40px; height: 40px;}
     #home .menu_mobile .show_menu
     {
@@ -464,11 +462,8 @@ body {background-color: #f2f2f2;}
 
 /* ////////  TELA PORTIFÓLIO  //////// */
 
-#portifolio
-{
-    background-color: #f2f2f2;
-    padding: 50px 0;
-}
+#portifolio {background-color: #0b1b2c; padding: 50px 0;}
+#portifolio h1 {text-align: center; padding: 20px 0; font-weight: 400; font-size: 28pt; color: #f2f2f2;}
 
 #portifolio .content
 {
@@ -488,7 +483,6 @@ body {background-color: #f2f2f2;}
 {
     width: 100%;
     border-radius: 15px;
-    background-color: #556a94;
     display: flex;
     flex-direction: row;
 }
@@ -513,9 +507,11 @@ body {background-color: #f2f2f2;}
 
 @keyframes backgroundOpacity {0% {opacity: 0;} 100% {opacity: 1;}}
 
-
 #portifolio .content .content_trabalho .text_desc_trabalho {padding: 30px;}
-#portifolio .content .content_trabalho .text_desc_trabalho h2 {font-weight: 600;}
+#portifolio .content .content_trabalho .text_desc_trabalho h2 {font-weight: 600; color: #f2f2f2;}
+#portifolio .content .content_trabalho .text_desc_trabalho span {color: #846464; font-weight: 100;}
+#portifolio .content .content_trabalho .text_desc_trabalho p  {color: #f2f2f2; text-decoration: none; font-weight: 200;}
+#portifolio .content .content_trabalho .text_desc_trabalho p a {color: #3c5a96; text-decoration: none;}
 
 #portifolio .content .mudar_buttons
 {
@@ -538,7 +534,6 @@ body {background-color: #f2f2f2;}
 }
 
 #portifolio .content .mudar_buttons .button[disabled] {color: #251717; background-color: #163167;}
-
 #portifolio .content .mudar_buttons .button.anterior {border-radius: 50px 0 0 50px;}
 #portifolio .content .mudar_buttons .button.proximo {border-radius: 0 50px 50px 0;}
 
@@ -556,37 +551,6 @@ body {background-color: #f2f2f2;}
     #portifolio .content .content_trabalho .text_desc_trabalho p {margin-top: -20px;}
 }
 
-/*
-#portifolio .trabalho
-{
-    width: 44%;
-    min-width: 200px;
-    margin: 5px 5px;
-    padding: 25px;
-    height: 200px;
-    background-color: #251717;
-    display: flex;
-    border-radius: 20px;
-}
-
-#portifolio .trabalho .img
-{
-    width: 250px;
-    height: 200px;
-    margin-right: 25px;
-    border-radius: 10px;
-    background-color: green;
-    background: url('images/bg_01.jpg') center center no-repeat;
-    object-fit: cover;
-}
-
-#portifolio .siteAfma .img
-{
-    background: url('images/portifolio/afma_01.png') center center no-repeat;
-    background-size: contain;
-}
-*/
-
 
 
 /* ////////  FOOTER  //////// */
@@ -603,6 +567,7 @@ footer
     position: relative;
     padding: 0%;
     margin: 0;
+    padding-bottom: 40px;
 }
 
 footer .content_footer_animation
@@ -668,6 +633,10 @@ footer .menu a, footer .redes_sociais a
     border-radius: 20px 20px 0 0;
     justify-content: center;
     display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
 .developedBy a {color: #3c5a96;}
 .developedBy p {margin: 0;}
@@ -687,9 +656,10 @@ footer .redes_sociais .email strong {color: #f2f2f2;}
 }
 
 @media (max-width: 700px) {
+    footer {display: block; padding: 30px 0; padding-bottom: 0;}
+    footer {padding-bottom: 70px;}
     footer h1.chamada {left: 0;}
     footer .content_footer_animation {display: none;}
-    footer {display: block; padding: 30px 0; padding-bottom: 0;}
     footer .menu, footer .redes_sociais
     {
         border-bottom: 1px solid #b8b1b192;
