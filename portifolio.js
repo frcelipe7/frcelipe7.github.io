@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const listaImagens = [
         'afma_01.png',
-        'bg_04_tiny.jpg',
-        'minha_foto.jpg',
+        'new_job.png',
+        'todo_list.png',
     ];
     const listaLinks = [
         'https://filhasdomel.github.io/site/',
-        'https://cursos.fluencyacademy.io/login',
-        'https://play.hbomax.com/page/urn:hbo:page:home',
+        'https://www.youtube.com/watch?v=TeuvA68l0bM',
+        'https://github.com/frcelipe7/todo',
     ];
     const textsPortifolio = document.querySelectorAll("#portifolio .content .content_trabalho .text_desc_trabalho .content_description_portifolio");
     const imageContent = document.querySelector("#portifolio .content .img_content");
