@@ -7,7 +7,7 @@
 * {font-family: 'Poppins', sans-serif; font-weight: 400; padding: 0; margin: 0;}
 
 html {background-color: #030001;}
-body {background-color: #0b1b2c;}
+body {background-color: #191212;}
 
 body::-webkit-scrollbar {
     width: 10px;
@@ -462,7 +462,7 @@ body::-webkit-scrollbar-thumb {
 
 /* ////////  TELA PORTIFÓLIO  //////// */
 
-#portifolio {background-color: #0b1b2c; padding: 50px 0;}
+#portifolio {background-color: #191212; padding: 50px 0;}
 #portifolio h1 {text-align: center; padding: 20px 0; font-weight: 400; font-size: 28pt; color: #f2f2f2;}
 
 #portifolio .content
