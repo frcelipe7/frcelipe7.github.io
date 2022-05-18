@@ -7,7 +7,7 @@
 * {font-family: 'Poppins', sans-serif; font-weight: 400; padding: 0; margin: 0;}
 
 html {background-color: #030001;}
-body {background-color: #191212;}
+body {background-color: #08161f;}
 
 body::-webkit-scrollbar {
     width: 10px;
@@ -360,7 +360,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #251717;
     padding-top: 70px;
     margin-top: -170px;
-    border-radius: 0 0 20px 20px;
 }
 #tecnologias h1.title
 {
@@ -462,7 +461,14 @@ body::-webkit-scrollbar-thumb {
 
 /* ////////  TELA PORTIFÓLIO  //////// */
 
-#portifolio {background-color: #191212; padding: 50px 0;}
+#portifolio
+{
+    background-color: #191212;
+    padding: 60px 0;
+    background: url('images/bg_04_tiny.jpg') right center no-repeat;
+    background-attachment: fixed;
+    margin-bottom: -10px;
+}
 #portifolio h1 {text-align: center; padding: 20px 0; font-weight: 400; font-size: 28pt; color: #f2f2f2;}
 
 #portifolio .content
@@ -470,16 +476,18 @@ body::-webkit-scrollbar-thumb {
     height: auto;
     width: 90%;
     margin: auto;
-    background-color: #251717;
+    box-shadow: 1.5px 1.5px 2px rgb(70, 71, 72),
+            -1px -1px 1px rgb(126, 131, 135);
+    background-color: rgba(255, 255, 255, 0.086);
+    backdrop-filter: blur(7px);
+    color: #04052E;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 20px;
     padding: 15px;
+    padding-bottom: 0;
     max-width: 800px;
-    box-shadow: 
-        -4px -4px 3px #251919,
-         4px  4px 5px #180f0f;
 }
 
 #portifolio .content .content_trabalho
@@ -495,11 +503,12 @@ body::-webkit-scrollbar-thumb {
 #portifolio .content .img_content
 {
     aspect-ratio: 3 / 4;
-    height: 450px;
+    height: 400px;
     border-radius: 15px;
     background: center center no-repeat;
     background-image: url("images/portifolio/afma_01.png");
     background-size: cover;
+    background-color: gray;
 }
 
 #portifolio .content .img_content[slidingAnterior] {animation: slidingAnterior; animation-duration: .5s;}
@@ -512,21 +521,22 @@ body::-webkit-scrollbar-thumb {
 
 #portifolio .content .content_trabalho .text_desc_trabalho {padding: 30px;}
 #portifolio .content .content_trabalho .text_desc_trabalho h2 {font-weight: 600; color: #f2f2f2;}
-#portifolio .content .content_trabalho .text_desc_trabalho span {color: #846464; font-weight: 100;}
+#portifolio .content .content_trabalho .text_desc_trabalho span {color: #4f87ff; font-weight: 100;}
 #portifolio .content .content_trabalho .text_desc_trabalho p  {color: #f2f2f2; text-decoration: none; font-weight: 200;}
-#portifolio .content .content_trabalho .text_desc_trabalho p a {color: #3c5a96; text-decoration: none;}
+#portifolio .content .content_trabalho .text_desc_trabalho p a {color: #4f87ff; text-decoration: none;}
 
 #portifolio .content .mudar_buttons
 {
     display: flex;
-    margin: 10px auto;
+    margin: 5px auto;
     height: 50px;
     width: 123px;
 }
 
 #portifolio .content .mudar_buttons .button
 {
-    background-color: #556a94;
+    background-color: #163167;
+    color: #f2f2f2;
     width: 60px;
     margin: auto;
     display: flex;
@@ -536,7 +546,7 @@ body::-webkit-scrollbar-thumb {
     border: none;
 }
 
-#portifolio .content .mudar_buttons .button[disabled] {color: #251717; background-color: #163167;}
+#portifolio .content .mudar_buttons .button[disabled] {color: #6e7481; background-color: #424a5b;}
 #portifolio .content .mudar_buttons .button.anterior {border-radius: 50px 0 0 50px;}
 #portifolio .content .mudar_buttons .button.proximo {border-radius: 0 50px 50px 0;}
 
@@ -556,6 +566,154 @@ body::-webkit-scrollbar-thumb {
 
 
 
+/* ////////  TELA CONTATE_ME  //////// */
+#contate_me
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    padding-top: 80px;
+    color: #f2f2f2;
+}
+
+#contate_me .content-form
+{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contate_me .content-form .nome,
+#contate_me .content-form .email,
+#contate_me .content-form .assunto,
+#contate_me .content-form .message
+{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+#contate_me .content-form input,
+#contate_me .content-form textarea
+{
+    font-size: 12pt;
+    width: 95%;
+    margin: 15px 0;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #071c44;
+    transition: .2s;
+    background-color: #132937;
+    color: #cad2e1;
+}
+
+#contate_me .content-form input:focus,
+#contate_me .content-form textarea:focus {border-color: #546fa5;}
+
+#contate_me .content-form input {height: 25px;}
+
+#contate_me .content-form textarea
+{
+    resize: vertical; 
+    min-height: 200px; 
+    max-height: 400px;
+}
+
+#contate_me .content-form textarea ~ label
+{
+    height: 20px;
+    top: 27px;
+}
+
+#contate_me .content-form textarea:focus ~ label
+{top: -5px; font-size: 10pt; color: #ffffff; left: 10px;}
+
+#contate_me .content-form textarea:not(:placeholder-shown) ~ label
+{top: -5px; font-size: 10pt; color: #ffffff; left: 10px;}
+
+#contate_me .content-form textarea::-webkit-scrollbar {width: 10px;}
+#contate_me .content-form textarea::-webkit-scrollbar-track {background: transparent;}
+
+#contate_me .content-form textarea::-webkit-scrollbar-thumb
+{
+    background-color: #3c5a96;
+    border-radius: 20px;
+}
+
+#contate_me .content-form label 
+{
+    position: absolute;
+    left: 15px;
+    bottom: 26px;
+    transition: .3s;
+    background-color: transparent;
+    color: #6f8fd0;
+    cursor: text;
+}
+
+#contate_me .content-form input:focus ~ label
+{
+    bottom: 65px;
+    font-size: 10pt;
+    left: 10px;
+    color: #ffffff;
+    cursor: default;
+}
+
+#contate_me .content-form input:not(:placeholder-shown) ~ label
+{
+    bottom: 65px;
+    font-size: 10pt;
+    left: 10px;
+    color: #ffffff;
+    cursor: default;
+}
+
+#contate_me .content-form input:not(:placeholder-shown),
+#contate_me .content-form textarea:not(:placeholder-shown) {border-color: #546fa5;}
+
+#contate_me .content-form button
+{
+    width: 50%;
+    min-width: 200px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #f2f2f2;
+    color: #2b3549;
+    transition: .1s;
+    font-weight: 600;
+    font-size: 12pt;
+}
+
+#contate_me .content-form button:hover
+{
+    background-color: #cad2e1;
+    color: #1f232b;
+}
+
+@media (min-width: 700px) {
+    #contate_me .content-form {min-width: 500px;}
+}
+
+@media (max-width: 700px) {
+    #contate_me .content-form {width: 80%;}
+}
+
+@media (max-width: 500px) {
+    #contate_me .content-form {width: 90%;}
+}
+
+
+
 /* ////////  FOOTER  //////// */
 
 footer
@@ -571,40 +729,6 @@ footer
     padding: 0%;
     margin: 0;
     padding-bottom: 40px;
-    box-shadow: -1px -2px 1px #040e1d;
-}
-
-footer .content_footer_animation
-{
-    position: absolute;
-    left: 57px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-shadow: 0 0 5px #11275200;
-    border-radius: 15px;
-    padding: 15px;
-    height: 250px;
-}
-
-footer .content_footer_animation .animation
-{
-    width: 250px;
-    height: 250px;
-}
-
-footer h1.chamada
-{
-    color: #f2f2f2;
-    position: absolute;
-    left: 50px;
-    top: -30px;
-    background-color: #020914;
-    padding: 5px 10px;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0px -2px 1px #040e1d;
 }
 
 footer a {width: 120px;}
@@ -618,7 +742,7 @@ footer .menu, footer .redes_sociais
     color: #f2f2f2;
     border-left: 1px solid #b8b1b192;
     padding: 20px;
-    padding-right: 50px;
+    padding-right: 70px;
 }
 
 footer .menu a, footer .redes_sociais a
@@ -650,21 +774,9 @@ footer .menu a:hover, footer .redes_sociais a:hover {color: #b8b1b1;}
 
 footer .redes_sociais .email strong {color: #f2f2f2;}
 
-@media (max-width: 900px) {
-    footer .content_footer_animation {left: 30px;}
-    footer .content_footer_animation .animation {width: 200px; height: 200px;}
-}
-
-@media (max-width: 800px) {
-    footer .content_footer_animation {left: 10px;}
-    footer .content_footer_animation .animation {width: 150px; height: 150px;}
-}
-
 @media (max-width: 700px) {
     footer {display: block; padding: 30px 0; padding-bottom: 0;}
     footer {padding-bottom: 70px;}
-    footer h1.chamada {left: 0;}
-    footer .content_footer_animation {display: none;}
     footer .menu, footer .redes_sociais
     {
         border-bottom: 1px solid #b8b1b192;

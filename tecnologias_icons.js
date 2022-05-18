@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ["#376fa2", "#f2f2f2"],
         ["#f05133", "#f2f2f2"],
         ["#010101", "#f2f2f2"],
-        ["#cc6699", "#f2f2f2"]
     ]
     const quantidadeIcons = icons.length;
     var inicio = 0;
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "text_python",
         "text_git",
         "text_github",
-        "text_sass"
     ];
 
     icons.forEach(icon => {
