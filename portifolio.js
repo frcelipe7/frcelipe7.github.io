@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'https://filhasdomel.github.io/site/',
         'https://www.youtube.com/watch?v=TeuvA68l0bM',
         'https://github.com/frcelipe7/todo',
-        'https://frcelipe7.github.io/api-clima/index.html',
+        'https://frcelipe7.github.io/clima.html',
     ];
     const textsPortifolio = document.querySelectorAll("#portifolio .content .content_trabalho .text_desc_trabalho .content_description_portifolio");
     const imageContent = document.querySelector("#portifolio .content .img_content");
