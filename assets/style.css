@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root 
+{
+    --primary-color: #FFFFFF;
+    --secondary-color: #F2F2F2;
+    --tertiary-color: #106BA2;
+    --quaternary-color: #004D7B;
+}
+
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+
+/* estilizacoes gerais */
+section 
+{
+    width: 100%; min-height: 80vh;
+    position: relative;
+    padding: 100px;
+    padding-top: 250px;
+    margin-top: 100px;
+}
+
+.title_section 
+{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 90pt;
+    color: #F2F2F2;
+    position: absolute;
+    z-index: 0;
+    left: 260px;
+    top: 0;
+}
+
+.description_section 
+{
+    font-size: 20pt;
+    position: absolute;
+    z-index: 1;
+    left: 40%;
+    top: 95px;
+    font-weight: 300;
+    padding-right: 100px;
+}
+
+
+/* estilizacoes da section about_me */
+#about_me .description
+{
+    width: 55%; height: auto;
+}
+
+#about_me .container
+{
+    max-width: 1300px; height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+#about_me .container .icon
+{
+    width: 250px; height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#about_me .container .icon img
+{
+    max-width: 170px; height: 50px;
+    object-fit: contain;
+}
+
+#about_me .container .icon p {
+    font-size: 11pt;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#about_me .container .icon p.year {
+    color: #F2F2F2;
+    margin-top: 10px;
+    color: var(--quaternary-color);
+}
+
+
+/* estilizacoes da section hard_skills */
+#hard_skills
+{
+    width: 100%; height: 90vh;
+    /* background-color: red; */
+    position: relative;
+}
+
+#hard_skills .container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#hard_skills .card_section
+{
+    width: 400px; height: auto;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.074),
+                5px 5px 15px rgba(143, 143, 143, 0.022);
+    font-size: 11pt;
+    position: absolute;
+    background-color: var(--primary-color);
+    bottom: 0; right: 100px;
+}
+
+#hard_skills .card_section strong
+{
+    color: var(--quaternary-color);
+    margin-bottom: 20px;
+}
+
+
+/* estilizacoes da section projects */
+#projects .container
+{
+    width: 100%; height: auto;
+}
+
+#projects .container .project_line
+{
+    width: 100%; height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 0 50px;
+    margin-bottom: 40px;
+}
+
+
+#projects .container .project_line img
+{
+    width: 45%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary-color);
+    background-color: #d6d6d623;
+    margin-right: 30px;
+}
+
+#projects .container .project_line img:hover
+{
+    border: 2px solid var(--tertiary-color);
+}
+
+
+#projects .container .project_line .card_description
+{
+    width: 55%; height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#projects .container .project_line .card_description h3
+{
+    font-size: 15pt;
+    /* font-weight: 500; */
+    color: var(--tertiary-color);
+}
+
+#projects .container .project_line .card_description strong
+{
+    color: var(--tertiary-color);
+}
+
+#projects .container .project_line .card_description .icons
+{
+    display: flex;
+}
+
+#projects .container .project_line .card_description .icons .icon,
+#projects .container .project_line .card_description .icons .icon svg
+{
+    width: 40px; height: 40px;
+}
+
