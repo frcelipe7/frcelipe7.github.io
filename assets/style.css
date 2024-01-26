@@ -34,7 +34,8 @@ section
 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 90pt;
-    color: #F2F2F2;
+    /* color: #F2F2F2; */
+    color: #dedede;
     position: absolute;
     z-index: 0;
     left: 260px;
@@ -199,5 +200,100 @@ section
 #projects .container .project_line .card_description .icons .icon svg
 {
     width: 40px; height: 40px;
+}
+
+
+/* estilizacoes da section contacts */
+#contacts .line
+{
+    width: 100%; height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#contacts .line .container
+{
+    width: 220px; height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition: .4s;
+
+}
+
+#contacts .line .container .icon
+{
+    transition: .4s;
+}
+
+#contacts .line .container:hover .icon
+{
+    transform: scale(1.05);
+    margin-top: -20px;
+}
+
+#contacts .line .container .icon svg
+{
+    width: 90px; height: 90px;
+}
+
+#contacts .line .container .icon.github
+{
+    width: 75px; height: 75px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#contacts .line .container .icon.github svg
+{
+    width: 75px; height: 75px;
+    fill: #F2F2F2;
+}
+
+#contacts .line .container .icon.phone,
+#contacts .line .container .icon.email
+{
+    border-radius: 10px;
+    background-color: black;
+    width: 75px; height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#contacts .line .container .icon.phone .bg,
+#contacts .line .container .icon.email .bg
+{
+    background-color: var(--primary-color);
+    width: 50px; height: 50px;
+    position: absolute;
+    z-index: 0;
+}
+
+#contacts .line .container .icon.phone svg,
+#contacts .line .container .icon.email svg
+{
+    z-index: 0;
+}
+
+#contacts .line .container p
+{
+    position: absolute;
+    top: 110px;
+    text-wrap: nowrap;
+    font-size: 11pt;
+    transition: .2s;
+    color: black;
+}
+
+#contacts .line .container:hover p
+{
+    color: var(--quaternary-color);
 }
 

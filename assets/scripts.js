@@ -47,4 +47,31 @@ document.addEventListener("DOMContentLoaded", () => {
     project_images.forEach(image => {
         image.style.height = image.offsetWidth/16*9 + "px";
     });
+
+
+
+    // animação hover icons em contatos
+    var contact_icons = document.querySelectorAll("#contacts .line .container");
+
+    contact_icons.forEach(icon_hover => {
+        icon_hover.addEventListener("mouseover", () => {
+            icon_hover.classList.add("hover");
+
+            contact_icons.forEach(icon_not_hover => {
+                if (!icon_not_hover.classList.contains("hover")) {
+                    icon_not_hover.style.opacity = ".8";
+                }
+            });
+        });
+
+        icon_hover.addEventListener("mouseout", () => {
+            contact_icons.forEach(icon_not_hover => {
+                if (!icon_not_hover.classList.contains("hover")) {
+                    icon_not_hover.style.opacity = "1";
+                }
+            });
+
+            icon_hover.classList.remove("hover");
+        });
+    })
 });
