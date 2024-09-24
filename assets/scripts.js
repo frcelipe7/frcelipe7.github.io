@@ -57,17 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
         icon_hover.addEventListener("mouseover", () => {
             icon_hover.classList.add("hover");
 
-            contact_icons.forEach(icon_not_hover => {
-                if (!icon_not_hover.classList.contains("hover")) {
-                    icon_not_hover.style.opacity = ".8";
+            contact_icons.forEach(icon => {
+                if (!icon.classList.contains("hover")) {
+                    icon.style.opacity = ".8";
                 }
             });
         });
 
         icon_hover.addEventListener("mouseout", () => {
-            contact_icons.forEach(icon_not_hover => {
-                if (!icon_not_hover.classList.contains("hover")) {
-                    icon_not_hover.style.opacity = "1";
+            contact_icons.forEach(icon => {
+                if (!icon.classList.contains("hover")) {
+                    icon.style.opacity = "1";
                 }
             });
 

@@ -19,8 +19,15 @@
     font-weight: 400;
 }
 
+html
+{
+    scroll-behavior: smooth;
+}
 
-/* estilizacoes gerais */
+
+
+
+/*////    ESTILIZAÇÕES GERAIS    ////*/
 section 
 {
     width: 100%; min-height: 80vh;
@@ -54,10 +61,18 @@ section
 }
 
 
-/* estilizacoes da section about_me */
-#about_me .description
+
+
+
+/*////    SECTION ABOUT_ME    ////*/
+#about_me P.description
 {
     width: 55%; height: auto;
+    text-indent: 40px;
+    /* word-wrap: break-word;
+    text-align: justify;
+    hyphens: auto; */
+    line-height: 30px;
 }
 
 #about_me .container
@@ -89,28 +104,32 @@ section
     object-fit: contain;
 }
 
-#about_me .container .icon.icpc img {
+#about_me .container .icon.icpc img 
+{
     width: 200px;
 }
 
-#about_me .container .icon p {
+#about_me .container .icon p 
+{
     font-size: 11pt;
     text-align: center;
     margin-top: 20px;
 }
 
-#about_me .container .icon p.year {
+#about_me .container .icon p.year 
+{
     color: #F2F2F2;
     margin-top: 10px;
     color: var(--quaternary-color);
 }
 
 
-/* estilizacoes da section hard_skills */
+
+
+/*////    SECTION HARD_SKILLS    ////*/
 #hard_skills
 {
     width: 100%; height: 90vh;
-    /* background-color: red; */
     position: relative;
 }
 
@@ -135,14 +154,16 @@ section
     bottom: 0; right: 100px;
 }
 
-#hard_skills .card_section strong
+#hard_skills .card_section span
 {
     color: var(--quaternary-color);
     margin-bottom: 20px;
 }
 
 
-/* estilizacoes da section projects */
+
+
+/*////    SECTION PROJETOS    ////*/
 #projects .container
 {
     width: 100%; height: auto;
@@ -207,7 +228,9 @@ section
 }
 
 
-/* estilizacoes da section contacts */
+
+
+/*////    SECTION CONTATOS    ////*/
 #contacts .line
 {
     width: 100%; height: auto;
@@ -227,7 +250,6 @@ section
     flex-direction: column;
     position: relative;
     transition: .4s;
-
 }
 
 #contacts .line .container .icon
