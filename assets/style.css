@@ -64,6 +64,41 @@ section
 
 
 
+/*////    NAV    ////*/
+nav
+{
+    width: auto; height: auto;
+    position: fixed;
+    top: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+nav ul li
+{
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 5px;
+    transition: .2s;
+}
+
+nav ul li:hover
+{
+    color: var(--tertiary-color);
+    transform: scale(0.98);
+}
+
+nav ul li.shown
+{
+    color: var(--quaternary-color);
+}
+
+
+
 /*////    SECTION ABOUT_ME    ////*/
 #about_me P.description
 {
@@ -164,30 +199,48 @@ section
 
 
 /*////    SECTION PROJETOS    ////*/
+#projects .buttons button
+{
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background-color: var(--quaternary-color);
+    color: var(--primary-color);
+    font-size: 20pt;
+    cursor: pointer;
+    border: none;
+    transition: .2s;
+}
+
+#projects .buttons button:hover
+{
+    background-color: var(--tertiary-color);
+}
+
 #projects .container
 {
     width: 100%; height: auto;
+    display: flex;
+    overflow: hidden;
+    column-gap: 30px;
 }
 
 #projects .container .project_line
 {
     width: 100%; height: auto;
     display: flex;
-    flex-direction: row;
-    padding: 0 50px;
-    margin-bottom: 40px;
+    flex-direction: column;
 }
 
 
 #projects .container .project_line img
 {
-    width: 45%;
+    width: 400px;
+    aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 10px;
     transition: all 0.3s ease;
     border: 2px solid var(--secondary-color);
     background-color: #d6d6d623;
-    margin-right: 30px;
 }
 
 #projects .container .project_line img:hover
@@ -198,7 +251,7 @@ section
 
 #projects .container .project_line .card_description
 {
-    width: 55%; height: auto;
+    width: 100%; height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

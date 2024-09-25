@@ -74,4 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
             icon_hover.classList.remove("hover");
         });
     })
+
+
+    document.addEventListener("scroll", () => {
+            
+        document.querySelectorAll("section").forEach(section => {
+            if(window.scrollY + window.innerHeight >= section.offsetTop) {
+                document.querySelector(`nav ul li.${section.id}`).classList.add("shown");
+            } else {
+                document.querySelector(`nav ul li.${section.id}`).classList.remove("shown");
+            }
+        });
+    });
 });
