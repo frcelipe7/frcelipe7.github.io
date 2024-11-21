@@ -19,8 +19,9 @@
     font-weight: 400;
 }
 
-html
+html, body
 {
+    width: 100%;
     scroll-behavior: smooth;
 }
 
@@ -28,13 +29,21 @@ html
 
 
 /*////    ESTILIZAÇÕES GERAIS    ////*/
+main 
+{
+    width: 100%; height: auto;
+    position: relative;
+}
+
 section 
 {
-    width: 100%; min-height: 80vh;
+    width: calc(100% - 200px); min-height: 80vh;
     position: relative;
     padding: 100px;
     padding-top: 250px;
     margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 0;
 }
 
 .title_section 
@@ -67,14 +76,16 @@ section
 /*////    NAV    ////*/
 nav
 {
-    width: auto; height: auto;
+    width: 200px; height: 100%;
+    border: 1px solid #dcdcdc;
     position: fixed;
-    top: 0; right: 0;
+    top: 0; left: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 50px;
+    position: sticky;
 }
 
 nav ul li
@@ -84,6 +95,7 @@ nav ul li
     user-select: none;
     margin-bottom: 5px;
     transition: .2s;
+    font-weight: 300;
 }
 
 nav ul li:hover
@@ -103,7 +115,7 @@ nav ul li.shown
 #about_me P.description
 {
     width: 55%; height: auto;
-    text-indent: 40px;
+    /* text-indent: 40px; */
     /* word-wrap: break-word;
     text-align: justify;
     hyphens: auto; */
@@ -222,13 +234,15 @@ nav ul li.shown
     display: flex;
     overflow: hidden;
     column-gap: 30px;
+    position: relative;
 }
 
 #projects .container .project_line
 {
-    width: 100%; height: auto;
+    width: 90%; height: 500px;
     display: flex;
     flex-direction: column;
+    background-color: red;
 }
 
 

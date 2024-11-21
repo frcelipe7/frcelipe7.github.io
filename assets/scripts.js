@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             contact_icons.forEach(icon => {
                 if (!icon.classList.contains("hover")) {
-                    icon.style.opacity = ".8";
+                    icon.style.opacity = ".6";
                 }
             });
         });
@@ -79,7 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", () => {
             
         document.querySelectorAll("section").forEach(section => {
-            if(window.scrollY + window.innerHeight >= section.offsetTop) {
+            if (window.scrollY > section.offsetTop + section.offsetHeight) {
+                document.querySelector(`nav ul li.${section.id}`).classList.remove("shown");
+            } else if(window.scrollY >= section.offsetTop) {
                 document.querySelector(`nav ul li.${section.id}`).classList.add("shown");
             } else {
                 document.querySelector(`nav ul li.${section.id}`).classList.remove("shown");
