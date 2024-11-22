@@ -1,17 +1,205 @@
-/* Error: Undefined mixin.
- *     ,
- * 105 |             @include flex_center;
- *     |             ^^^^^^^^^^^^^^^^^^^^
- *     '
- *   assets\sass\style.scss 105:13  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 105 \2502              @include flex_center;\d\a     \2502              ^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   assets\\sass\\style.scss 105:13  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
+
+html, body {
+  width: 100%;
+  scroll-behavior: smooth;
+  background-color: #EDEDED;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+main section {
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  padding: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  background-color: rgba(237, 237, 237, 0.7176470588);
+  backdrop-filter: blur(5px);
+}
+nav .left, nav .right {
+  display: flex;
+  align-items: end;
+}
+nav .left .logo {
+  width: fit-content;
+  font-size: 12pt;
+  font-weight: 500;
+  line-height: 20px;
+  margin-right: 10px;
+}
+nav .left .logo span {
+  font-weight: 500;
+  color: #106BA2;
+}
+nav .left ul {
+  display: flex;
+  height: 100%;
+}
+nav .left ul li {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.1s;
+  font-weight: 400;
+  font-size: 10pt;
+  padding: 0 10px;
+}
+nav .left ul:hover {
+  color: #004D7B;
+}
+nav .right .social_media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  gap: 5px;
+}
+nav .right .social_media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+nav .right .social_media a svg {
+  width: 26px;
+  height: 26px;
+}
+nav .right .contato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #106BA2;
+  color: #EDEDED;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 11pt;
+  margin-left: 10px;
+  text-decoration: none;
+}
+nav .right .contato:hover {
+  background-color: #004D7B;
+}
+
+section#inicio {
+  height: 100vh;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+section#inicio .left {
+  width: 50%;
+}
+section#inicio .left span {
+  font-size: 24pt;
+  font-weight: 400;
+  color: #106BA2;
+}
+section#inicio .left h1 {
+  font-size: 50pt;
+  font-weight: 500;
+  color: #222222;
+  margin-top: -20px;
+}
+section#inicio .left p {
+  font-weight: 400;
+}
+section#inicio .left .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 200px;
+  flex-direction: column;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  gap: 5px;
+}
+section#inicio .left .buttons img {
+  width: 44px;
+  height: auto;
+}
+section#inicio .left .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.1s;
+}
+section#inicio .left .buttons a svg {
+  width: 38px;
+  height: 38px;
+}
+section#inicio .left .buttons a:hover {
+  opacity: 0.8;
+  transform: scale(0.97);
+}
+section#inicio .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 750px;
+  right: -200px;
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+}
+section#inicio .right img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+section#inicio .right img:nth-child(1) {
+  animation: girar 180s linear infinite;
+}
+section#inicio .right img:nth-child(2) {
+  animation: girar 240s linear infinite;
+}
+
+@keyframes girar {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

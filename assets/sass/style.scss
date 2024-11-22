@@ -17,6 +17,7 @@
 html, body {
     width: 100%; 
     scroll-behavior: smooth;
+    background-color: variables.$light_color;
 }
 
 main {
@@ -27,9 +28,6 @@ main {
         width: 100%; min-height: 80vh;
         position: relative;
         padding: 100px;
-        padding-top: 250px;
-        margin-top: 100px;
-
     }
 }
 
@@ -40,7 +38,7 @@ nav {
     top: 0; left: 0;
     z-index: 1000;
     padding: 20px;
-    background-color: #ffffff8b;
+    background-color: #edededb7;
     backdrop-filter: blur(5px);
 
     .left, .right {
@@ -90,19 +88,19 @@ nav {
 
             a {
                 @include mixins.flex_center;
-                background-color: variables.$principal_color;
+                background-color: variables.$light_low_contrast;
+                width: 30px; height: 30px;
                 text-decoration: none;
                 border-radius: 50px;
 
-                img {
-                    width: 30px; height: 30px;
-                    margin: auto;
+                svg{
+                    width: 26px; height: 26px;
                 }
             }
         }
 
         .contato {
-            @include flex_center;
+            @include mixins.flex_center;
             width: auto; height: 40px;
             padding: 10px 20px;
             border-radius: 5px;
@@ -119,4 +117,95 @@ nav {
             }
         }
     }
+}
+
+section#inicio {
+    height: 100vh;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+
+    .left {
+        width: 50%;
+
+        span {
+            font-size: 24pt;
+            font-weight: 400;
+            color: variables.$principal_color;
+        }
+
+        h1 {
+            font-size: 50pt;
+            font-weight: 500;
+            color: variables.$dark_color;
+            margin-top: -20px;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .buttons {
+            @include mixins.flex_center;
+            width: 35px; height: 200px;
+            flex-direction: column;
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            gap: 5px;
+
+            img {
+                width: 44px; height: auto;
+            }
+
+            a {
+                @include mixins.flex_center;
+                background-color: variables.$light_low_contrast;
+                width: 44px; height: 44px;
+                text-decoration: none;
+                border-radius: 50px;
+                transition: .1s;
+
+                svg {
+                    width: 38px; height: 38px;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                    transform: scale(0.97);
+                }
+            }
+        }
+    }
+
+    .right {
+        @include mixins.flex_center;
+        top: 750px;
+        right: -200px;
+        width: 50%; height: auto;
+        position: absolute;
+        z-index: 0;
+        
+        img {
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            &:nth-child(1) {
+                animation: girar 180s linear infinite;
+            }
+
+            &:nth-child(2) {
+                animation: girar 240s linear infinite;
+            }
+        }
+    }
+}
+
+@keyframes girar {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }    
 }
