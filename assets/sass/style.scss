@@ -72,11 +72,12 @@ nav {
                 font-weight: 400;
                 font-size: 10pt;
                 padding: 0 10px;
+                
+                &:hover {
+                    color: variables.$principal_hover;
+                }
             }
 
-            &:hover {
-                color: variables.$principal_hover;
-            }
         }
     }
 
@@ -121,9 +122,10 @@ nav {
 
 section#inicio {
     height: 100vh;
-    margin-top: 0;
+    margin-top: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .left {
         width: 50%;
@@ -178,17 +180,17 @@ section#inicio {
         }
     }
 
-    .right {
+    .code_img {
         @include mixins.flex_center;
-        top: 750px;
+        position: absolute;
+        top: 120vh;
         right: -200px;
         width: 50%; height: auto;
-        position: absolute;
         z-index: 0;
+        opacity: .7;
         
         img {
             position: absolute;
-            transform: translate(-50%, -50%);
 
             &:nth-child(1) {
                 animation: girar 180s linear infinite;
@@ -199,13 +201,23 @@ section#inicio {
             }
         }
     }
+
+    .right {
+        width: auto; height: 100vh;
+        z-index: 10;
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
 }
 
 @keyframes girar {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }    
 }
+
