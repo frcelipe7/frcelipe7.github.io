@@ -14,11 +14,14 @@
     font-weight: 400;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 html, body {
     width: 100%; 
     scroll-behavior: smooth;
     background-color: variables.$light_color;
-    // overflow-x: hidden;
 }
 
 main {
@@ -30,6 +33,11 @@ main {
         padding: 100px;
         position: relative;
         margin-top: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        grid-template-areas: "title right";
 
         .section_title {
             width: 70%; height: fit-content;
@@ -37,6 +45,7 @@ main {
             border-top: 2px solid black;
             position: sticky;
             top: 100px;
+            padding-bottom: 40px;
             
             
             h2 {
@@ -58,6 +67,20 @@ main {
                 width: auto;
                 color: variables.$light_low_contrast;
                 opacity: .5;
+            }
+        }
+
+        .right {
+            grid-area: right;
+            width: 100%;
+
+            p.description {
+                margin-bottom: 20px;
+                font-weight: 300;
+
+                span {
+                    font-weight: 500;
+                }
             }
         }
     }
@@ -297,49 +320,64 @@ section#inicio {
 
 
 
-////////////////    SECTIN INICIO    ////////////////
+////////////////    SECTIN ABOUT ME    ////////////////
 section#about_me {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 20px;
-    grid-template-areas: "title right";
-    
+    .container {
+        padding-top: 70px;
 
-    .right {
-        grid-area: right;
-        width: 100%;
+        .icon {
+            @include mixins.flex_center;
+            justify-content: space-between;
+            margin-bottom: 30px;
 
-        p.description {
-            margin-bottom: 20px;
+            img {
+                max-width: 140px; max-height: 40px;
+                object-fit: contain;
+                mix-blend-mode: multiply;
+            }
+
+            p {
+                font-weight: 300;
+                width: 70%;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+////////////////    SECTIN HARD SKILLS    ////////////////
+section#hard_skills {
+    ul {
+        list-style: none;
+        padding-top: 50px;
+
+        li {
+            margin-bottom: 5px;
             font-weight: 300;
 
             span {
                 font-weight: 500;
             }
         }
+    }
 
-        .container {
-            padding-top: 70px;
+    .icons_container {
+        @include mixins.flex_center;
+        justify-content: space-between;
+        padding-top: 50px;
 
-            .icon {
-                @include mixins.flex_center;
-                justify-content: space-between;
-                margin-bottom: 30px;
-
-                img {
-                    max-width: 140px; max-height: 40px;
-                    object-fit: contain;
-                    mix-blend-mode: multiply;
-                }
-
-                p {
-                    font-weight: 300;
-                    width: 70%;
-                }
-            }
-
+        .github svg {
+            width: 35px; height: 35px;
         }
 
+        svg {
+            width: 40px; height: 40px;
+        }
     }
 }

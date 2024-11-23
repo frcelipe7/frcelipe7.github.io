@@ -8,6 +8,10 @@
   font-weight: 400;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html, body {
   width: 100%;
   scroll-behavior: smooth;
@@ -25,6 +29,11 @@ main section {
   padding: 100px;
   position: relative;
   margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  grid-template-areas: "title right";
 }
 main section .section_title {
   width: 70%;
@@ -33,6 +42,7 @@ main section .section_title {
   border-top: 2px solid black;
   position: sticky;
   top: 100px;
+  padding-bottom: 40px;
 }
 main section .section_title h2 {
   font-weight: 500;
@@ -52,6 +62,17 @@ main section .section_title span {
   width: auto;
   color: #FFFFFF;
   opacity: 0.5;
+}
+main section .right {
+  grid-area: right;
+  width: 100%;
+}
+main section .right p.description {
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+main section .right p.description span {
+  font-weight: 500;
 }
 
 nav {
@@ -262,43 +283,52 @@ section#inicio .right a:hover {
     transform: rotate(360deg);
   }
 }
-section#about_me {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
-  grid-template-areas: "title right";
-}
-section#about_me .right {
-  grid-area: right;
-  width: 100%;
-}
-section#about_me .right p.description {
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-section#about_me .right p.description span {
-  font-weight: 500;
-}
-section#about_me .right .container {
+section#about_me .container {
   padding-top: 70px;
 }
-section#about_me .right .container .icon {
+section#about_me .container .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
   margin-bottom: 30px;
 }
-section#about_me .right .container .icon img {
+section#about_me .container .icon img {
   max-width: 140px;
   max-height: 40px;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
-section#about_me .right .container .icon p {
+section#about_me .container .icon p {
   font-weight: 300;
   width: 70%;
+}
+
+section#hard_skills ul {
+  list-style: none;
+  padding-top: 50px;
+}
+section#hard_skills ul li {
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+section#hard_skills ul li span {
+  font-weight: 500;
+}
+section#hard_skills .icons_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+section#hard_skills .icons_container .github svg {
+  width: 35px;
+  height: 35px;
+}
+section#hard_skills .icons_container svg {
+  width: 40px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
