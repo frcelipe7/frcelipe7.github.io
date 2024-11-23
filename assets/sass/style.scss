@@ -18,7 +18,7 @@ html, body {
     width: 100%; 
     scroll-behavior: smooth;
     background-color: variables.$light_color;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 main {
@@ -32,7 +32,7 @@ main {
         margin-top: 100px;
 
         .section_title {
-            width: 60%; height: fit-content;
+            width: 70%; height: fit-content;
             grid-area: title;
             border-top: 2px solid black;
             position: sticky;
@@ -127,9 +127,15 @@ nav {
                 width: 30px; height: 30px;
                 text-decoration: none;
                 border-radius: 50px;
+                transition: .1s;
 
                 svg{
                     width: 26px; height: 26px;
+                }
+
+                &:hover {
+                    opacity: 0.7;
+                    transform: scale(0.97);
                 }
             }
         }
@@ -230,7 +236,7 @@ section#inicio {
         right: -200px;
         width: 50%; height: auto;
         z-index: 0;
-        opacity: .7;
+        opacity: .9;
         
         img {
             position: absolute;
@@ -313,9 +319,27 @@ section#about_me {
             }
         }
 
-        img {
-            width: 150px; height: auto;
-            mix-blend-mode: multiply;
+        .container {
+            padding-top: 70px;
+
+            .icon {
+                @include mixins.flex_center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+
+                img {
+                    max-width: 140px; max-height: 40px;
+                    object-fit: contain;
+                    mix-blend-mode: multiply;
+                }
+
+                p {
+                    font-weight: 300;
+                    width: 70%;
+                }
+            }
+
         }
+
     }
 }
