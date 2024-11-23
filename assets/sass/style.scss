@@ -164,21 +164,8 @@ nav {
         }
 
         .contato {
-            @include mixins.flex_center;
-            width: auto; height: 40px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: variables.$principal_color;
-            color: variables.$light_color;
-            cursor: pointer;
-            transition: .2s;
-            font-size: 11pt;
+            @include mixins.cta_button;
             margin-left: 10px;
-            text-decoration: none;
-
-            &:hover {
-                background-color: variables.$principal_hover;
-            }
         }
     }
 }
@@ -190,7 +177,7 @@ nav {
 
 
 
-////////////////    SECTIN INICIO    ////////////////
+////////////////    SECTION INICIO    ////////////////
 section#inicio {
     height: 100vh;
     margin-top: 20px;
@@ -320,7 +307,7 @@ section#inicio {
 
 
 
-////////////////    SECTIN ABOUT ME    ////////////////
+////////////////    SECTION ABOUT ME    ////////////////
 section#about_me {
     .container {
         padding-top: 70px;
@@ -351,7 +338,9 @@ section#about_me {
 
 
 
-////////////////    SECTIN HARD SKILLS    ////////////////
+
+
+////////////////    SECTION HARD SKILLS    ////////////////
 section#hard_skills {
     ul {
         list-style: none;
@@ -378,6 +367,147 @@ section#hard_skills {
 
         svg {
             width: 40px; height: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+////////////////    SECTION PROJECTS    ////////////////
+section#projects {
+    width: 100%;
+    display: block;
+
+    .section_title{
+        position: relative;
+        top: 0;
+        margin-bottom: 100px;
+    }
+
+    .container {
+        width: 100%; height: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 4fr 1fr 1fr 4fr;
+        grid-template-rows: 5fr 2fr 20px 5fr 2fr 20px 6fr 20px 8fr;
+        grid-template-areas: 
+            "ia_ttt caminhos_trilhas caminhos_trilhas caminhos_trilhas"
+            ".      caminhos_trilhas caminhos_trilhas caminhos_trilhas"
+            ". . . ."
+    
+            "decidir decidir decidir clima_tempo"
+            "decidir decidir decidir ."
+            ". . . ."
+            
+            "afma afma new_job new_job"
+            ". . . ."
+    
+            "bio bio bio cta";
+        
+        .project {
+            width: 100%;
+
+            img {
+                width: 100%; height: auto;
+                border-radius: 10px;
+            }
+
+            .description {
+                font-size: 11pt
+            }
+
+            .bottom {
+                @include mixins.flex_center;
+                justify-content: space-between;
+                padding-top: 10px;
+                
+                a {
+                    font-size: 10pt
+                }
+
+                .icons {
+                    @include mixins.flex_center;
+                    justify-content: end;
+                    gap: 5px;
+                    
+                    .icon {
+                        @include mixins.flex_center;
+                        width: 24px; height: 24px;
+                        background-color: variables.$light_low_contrast;
+                        border-radius: 50px;
+                        svg {
+                            width: 20px; height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ia_ttt {
+            grid-area: ia_ttt;
+        }
+    
+        .caminhos_trilhas {
+            grid-area: caminhos_trilhas;
+        }
+    
+        .decidir {
+            grid-area: decidir;
+        }
+    
+        .clima_tempo {
+            grid-area: clima_tempo;
+        }
+    
+        .afma {
+            grid-area: afma;
+        }
+    
+        .new_job {
+            grid-area: new_job;
+        }
+    
+        .bio {
+            grid-area: bio;
+        }
+    
+        .cta {
+            grid-area: cta;
+
+            @include mixins.flex_center;
+            align-items: start;
+            flex-direction: column;
+            padding-bottom: 100px;
+            gap: 30px;
+
+            .top {
+                span {
+                    font-weight: 300;
+                    font-size: 13pt
+                }
+
+                h2 {
+                    font-size: 22pt;
+                    font-weight: 400;
+                    line-height: 35px
+                }
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 11pt;
+            }
+
+            .contato {
+                @include mixins.cta_button;
+            }
         }
     }
 }

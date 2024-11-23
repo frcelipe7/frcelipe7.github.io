@@ -160,8 +160,8 @@ nav .right .contato {
   cursor: pointer;
   transition: 0.2s;
   font-size: 11pt;
-  margin-left: 10px;
   text-decoration: none;
+  margin-left: 10px;
 }
 nav .right .contato:hover {
   background-color: #004D7B;
@@ -329,6 +329,128 @@ section#hard_skills .icons_container .github svg {
 section#hard_skills .icons_container svg {
   width: 40px;
   height: 40px;
+}
+
+section#projects {
+  width: 100%;
+  display: block;
+}
+section#projects .section_title {
+  position: relative;
+  top: 0;
+  margin-bottom: 100px;
+}
+section#projects .container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 4fr 1fr 1fr 4fr;
+  grid-template-rows: 5fr 2fr 20px 5fr 2fr 20px 6fr 20px 8fr;
+  grid-template-areas: "ia_ttt caminhos_trilhas caminhos_trilhas caminhos_trilhas" ".      caminhos_trilhas caminhos_trilhas caminhos_trilhas" ". . . ." "decidir decidir decidir clima_tempo" "decidir decidir decidir ." ". . . ." "afma afma new_job new_job" ". . . ." "bio bio bio cta";
+}
+section#projects .container .project {
+  width: 100%;
+}
+section#projects .container .project img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+section#projects .container .project .description {
+  font-size: 11pt;
+}
+section#projects .container .project .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+section#projects .container .project .bottom a {
+  font-size: 10pt;
+}
+section#projects .container .project .bottom .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: end;
+  gap: 5px;
+}
+section#projects .container .project .bottom .icons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+}
+section#projects .container .project .bottom .icons .icon svg {
+  width: 20px;
+  height: 20px;
+}
+section#projects .container .ia_ttt {
+  grid-area: ia_ttt;
+}
+section#projects .container .caminhos_trilhas {
+  grid-area: caminhos_trilhas;
+}
+section#projects .container .decidir {
+  grid-area: decidir;
+}
+section#projects .container .clima_tempo {
+  grid-area: clima_tempo;
+}
+section#projects .container .afma {
+  grid-area: afma;
+}
+section#projects .container .new_job {
+  grid-area: new_job;
+}
+section#projects .container .bio {
+  grid-area: bio;
+}
+section#projects .container .cta {
+  grid-area: cta;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding-bottom: 100px;
+  gap: 30px;
+}
+section#projects .container .cta .top span {
+  font-weight: 300;
+  font-size: 13pt;
+}
+section#projects .container .cta .top h2 {
+  font-size: 22pt;
+  font-weight: 400;
+  line-height: 35px;
+}
+section#projects .container .cta p {
+  font-weight: 300;
+  font-size: 11pt;
+}
+section#projects .container .cta .contato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #106BA2;
+  color: #EDEDED;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 11pt;
+  text-decoration: none;
+}
+section#projects .container .cta .contato:hover {
+  background-color: #004D7B;
 }
 
 /*# sourceMappingURL=style.css.map */

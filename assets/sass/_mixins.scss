@@ -1,3 +1,5 @@
+@use "variables";
+
 @mixin flex_center {
     display: flex;
     align-items: center;
@@ -8,4 +10,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@mixin cta_button {
+    @include flex_center;
+    width: auto; height: 40px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: variables.$principal_color;
+    color: variables.$light_color;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 11pt;
+    text-decoration: none;
+
+    &:hover {
+        background-color: variables.$principal_hover;
+    }
 }
