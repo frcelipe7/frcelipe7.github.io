@@ -28,3 +28,52 @@
         background-color: variables.$principal_hover;
     }
 }
+
+@mixin code_img {
+    @include flex_center;
+    position: absolute;
+    top: 120vh;
+    right: -200px;
+    width: 50%; height: auto;
+    z-index: 0;
+    opacity: .9;
+    
+    img {
+        position: absolute;
+
+        &:nth-child(1) {
+            animation: girar 180s linear infinite;
+        }
+
+        &:nth-child(2) {
+            animation: girar 240s linear infinite;
+        }
+    }
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }    
+}
+
+@mixin social_media_icon($size_a: 30px, $size_svg:26px) {
+    @include flex_center;
+    background-color: variables.$light_low_contrast;
+    width: $size_a; height: $size_a;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: .1s;
+
+    svg{
+        width: $size_svg; height: $size_svg;
+    }
+
+    &:hover {
+        opacity: 0.7;
+        transform: scale(0.97);
+    }
+}

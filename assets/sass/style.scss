@@ -140,26 +140,34 @@ nav {
 
     .right {
         .social_media {
+            // @include mixins.flex_center;
+            // width: auto; height: 40px;
+            // gap: 5px;
+
+            // a {
+            //     @include mixins.flex_center;
+            //     background-color: variables.$light_low_contrast;
+            //     width: 30px; height: 30px;
+            //     text-decoration: none;
+            //     border-radius: 50px;
+            //     transition: .1s;
+
+            //     svg{
+            //         width: 26px; height: 26px;
+            //     }
+
+            //     &:hover {
+            //         opacity: 0.7;
+            //         transform: scale(0.97);
+            //     }
+            // }
+
             @include mixins.flex_center;
             width: auto; height: 40px;
             gap: 5px;
 
             a {
-                @include mixins.flex_center;
-                background-color: variables.$light_low_contrast;
-                width: 30px; height: 30px;
-                text-decoration: none;
-                border-radius: 50px;
-                transition: .1s;
-
-                svg{
-                    width: 26px; height: 26px;
-                }
-
-                &:hover {
-                    opacity: 0.7;
-                    transform: scale(0.97);
-                }
+                @include mixins.social_media_icon;
             }
         }
 
@@ -180,7 +188,7 @@ nav {
 ////////////////    SECTION INICIO    ////////////////
 section#inicio {
     height: 100vh;
-    margin-top: 20px;
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -220,45 +228,13 @@ section#inicio {
             }
 
             a {
-                @include mixins.flex_center;
-                background-color: variables.$light_low_contrast;
-                width: 44px; height: 44px;
-                text-decoration: none;
-                border-radius: 50px;
-                transition: .1s;
-
-                svg {
-                    width: 38px; height: 38px;
-                }
-
-                &:hover {
-                    opacity: 0.8;
-                    transform: scale(0.97);
-                }
+                @include mixins.social_media_icon(44px, 38px);
             }
         }
     }
 
     .code_img {
-        @include mixins.flex_center;
-        position: absolute;
-        top: 120vh;
-        right: -200px;
-        width: 50%; height: auto;
-        z-index: 0;
-        opacity: .9;
-        
-        img {
-            position: absolute;
-
-            &:nth-child(1) {
-                animation: girar 180s linear infinite;
-            }
-
-            &:nth-child(2) {
-                animation: girar 240s linear infinite;
-            }
-        }
+        @include mixins.code_img;
     }
 
     .right {
@@ -267,7 +243,7 @@ section#inicio {
         display: flex;
         justify-content: end;
         flex-direction: column;
-        padding-bottom: 100px;
+        padding-bottom: 40px;
 
         a {
             @include mixins.flex_center;
@@ -288,17 +264,6 @@ section#inicio {
         }
     }
 }
-
-@keyframes girar {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }    
-}
-
-
 
 
 
@@ -396,40 +361,47 @@ section#projects {
         display: grid;
         gap: 20px;
         grid-template-columns: 4fr 1fr 1fr 4fr;
-        grid-template-rows: 5fr 2fr 20px 5fr 2fr 20px 6fr 20px 8fr;
+        grid-template-rows: auto auto 20px auto auto 20px auto 20px auto;
         grid-template-areas: 
             "ia_ttt caminhos_trilhas caminhos_trilhas caminhos_trilhas"
             ".      caminhos_trilhas caminhos_trilhas caminhos_trilhas"
             ". . . ."
     
-            "decidir decidir decidir clima_tempo"
-            "decidir decidir decidir ."
+            "frequencia frequencia frequencia clima_tempo"
+            "frequencia frequencia frequencia ."
             ". . . ."
             
             "afma afma new_job new_job"
             ". . . ."
     
             "bio bio bio cta";
+        position: relative;
         
         .project {
             width: 100%;
+            z-index: 1;
 
             img {
                 width: 100%; height: auto;
                 border-radius: 10px;
+                box-shadow: -5px -5px 10px #0000001a;
             }
 
             .description {
                 font-size: 11pt
             }
 
+            a {
+                color: variables.$action_color;
+            }
+
             .bottom {
                 @include mixins.flex_center;
                 justify-content: space-between;
-                padding-top: 10px;
+                padding-top: 15px;
                 
                 a {
-                    font-size: 10pt
+                    font-size: 10pt;
                 }
 
                 .icons {
@@ -458,8 +430,8 @@ section#projects {
             grid-area: caminhos_trilhas;
         }
     
-        .decidir {
-            grid-area: decidir;
+        .frequencia {
+            grid-area: frequencia;
         }
     
         .clima_tempo {
@@ -481,13 +453,17 @@ section#projects {
         .cta {
             grid-area: cta;
 
-            @include mixins.flex_center;
+            display: flex;
             align-items: start;
             flex-direction: column;
-            padding-bottom: 100px;
             gap: 30px;
+            position: sticky;
+            top: 230px;
+            height: fit-content;
 
             .top {
+                z-index: 1;
+
                 span {
                     font-weight: 300;
                     font-size: 13pt
@@ -503,10 +479,19 @@ section#projects {
             p {
                 font-weight: 300;
                 font-size: 11pt;
+                z-index: 1;
             }
 
             .contato {
                 @include mixins.cta_button;
+                z-index: 1;
+            }
+
+            .code_img {
+                @include mixins.code_img;
+                top: 100px;
+                right: -250px;
+                transform: scale(.5);
             }
         }
     }
