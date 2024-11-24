@@ -169,6 +169,7 @@ nav .right .contato {
   transition: 0.2s;
   font-size: 11pt;
   text-decoration: none;
+  user-select: none;
   margin-left: 10px;
 }
 nav .right .contato:hover {
@@ -249,6 +250,7 @@ section#inicio .code_img {
 }
 section#inicio .code_img img {
   position: absolute;
+  user-select: none;
 }
 section#inicio .code_img img:nth-child(1) {
   animation: girar 180s linear infinite;
@@ -289,7 +291,6 @@ section#about_me .container {
 section#about_me .container .icon {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   margin-bottom: 30px;
 }
@@ -318,7 +319,6 @@ section#hard_skills ul li span {
 section#hard_skills .icons_container {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   padding-top: 50px;
 }
@@ -339,6 +339,7 @@ section#projects .section_title {
   position: relative;
   top: 0;
   margin-bottom: 100px;
+  width: 34%;
 }
 section#projects .container {
   width: 100%;
@@ -369,7 +370,6 @@ section#projects .container .project a {
 section#projects .container .project .bottom {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   padding-top: 15px;
 }
@@ -431,12 +431,12 @@ section#projects .container .cta .top {
   z-index: 1;
 }
 section#projects .container .cta .top span {
-  font-weight: 300;
   font-size: 13pt;
+  color: #106BA2;
 }
 section#projects .container .cta .top h2 {
   font-size: 22pt;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 35px;
 }
 section#projects .container .cta p {
@@ -458,6 +458,7 @@ section#projects .container .cta .contato {
   transition: 0.2s;
   font-size: 11pt;
   text-decoration: none;
+  user-select: none;
   z-index: 1;
 }
 section#projects .container .cta .contato:hover {
@@ -480,12 +481,102 @@ section#projects .container .cta .code_img {
 }
 section#projects .container .cta .code_img img {
   position: absolute;
+  user-select: none;
 }
 section#projects .container .cta .code_img img:nth-child(1) {
   animation: girar 180s linear infinite;
 }
 section#projects .container .cta .code_img img:nth-child(2) {
   animation: girar 240s linear infinite;
+}
+
+section#contacts {
+  grid-template-areas: "title right" "contatos contatos";
+}
+section#contacts .section_title {
+  position: relative;
+  top: 0;
+}
+section#contacts .line {
+  grid-area: contatos;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+section#contacts .line a {
+  transition: 0.15s;
+  color: #2d85bc;
+}
+section#contacts .line a .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 150px;
+  gap: 10px;
+}
+section#contacts .line a .content .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 100px;
+  height: 100px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.1s;
+}
+section#contacts .line a .content .icon svg {
+  width: 94px;
+  height: 94px;
+}
+section#contacts .line a:hover {
+  transform: scale(1);
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+section#contacts .line:hover a:not(:hover) {
+  opacity: 0.4;
+  filter: blur(2px);
+}
+
+section#cv {
+  grid-template-areas: "title right" "cv cv";
+}
+section#cv .section_title {
+  position: relative;
+  top: 0;
+}
+section#cv .container {
+  grid-area: cv;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+section#cv .container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #106BA2;
+  color: #EDEDED;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 11pt;
+  text-decoration: none;
+  user-select: none;
+  transform: scale(1.2);
+}
+section#cv .container a:hover {
+  background-color: #004D7B;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -140,28 +140,6 @@ nav {
 
     .right {
         .social_media {
-            // @include mixins.flex_center;
-            // width: auto; height: 40px;
-            // gap: 5px;
-
-            // a {
-            //     @include mixins.flex_center;
-            //     background-color: variables.$light_low_contrast;
-            //     width: 30px; height: 30px;
-            //     text-decoration: none;
-            //     border-radius: 50px;
-            //     transition: .1s;
-
-            //     svg{
-            //         width: 26px; height: 26px;
-            //     }
-
-            //     &:hover {
-            //         opacity: 0.7;
-            //         transform: scale(0.97);
-            //     }
-            // }
-
             @include mixins.flex_center;
             width: auto; height: 40px;
             gap: 5px;
@@ -278,8 +256,7 @@ section#about_me {
         padding-top: 70px;
 
         .icon {
-            @include mixins.flex_center;
-            justify-content: space-between;
+            @include mixins.flex_space_between;
             margin-bottom: 30px;
 
             img {
@@ -322,8 +299,7 @@ section#hard_skills {
     }
 
     .icons_container {
-        @include mixins.flex_center;
-        justify-content: space-between;
+        @include mixins.flex_space_between;
         padding-top: 50px;
 
         .github svg {
@@ -354,6 +330,7 @@ section#projects {
         position: relative;
         top: 0;
         margin-bottom: 100px;
+        width: 34%;
     }
 
     .container {
@@ -396,8 +373,7 @@ section#projects {
             }
 
             .bottom {
-                @include mixins.flex_center;
-                justify-content: space-between;
+                @include mixins.flex_space_between;
                 padding-top: 15px;
                 
                 a {
@@ -465,14 +441,14 @@ section#projects {
                 z-index: 1;
 
                 span {
-                    font-weight: 300;
-                    font-size: 13pt
+                    font-size: 13pt;
+                    color: variables.$principal_color;
                 }
 
                 h2 {
                     font-size: 22pt;
-                    font-weight: 400;
-                    line-height: 35px
+                    font-weight: 500;
+                    line-height: 35px;
                 }
             }
 
@@ -493,6 +469,83 @@ section#projects {
                 right: -250px;
                 transform: scale(.5);
             }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+////////////////    SECTION CONTACTS    ////////////////
+section#contacts {
+    grid-template-areas: 
+        "title right"
+        "contatos contatos";
+    
+    .section_title {
+        position: relative;
+        top: 0;
+    }
+
+    .line {
+        grid-area: contatos;
+        width: 100%;
+        @include mixins.flex_center;
+        margin-top: 100px;
+        a {
+            transition: .15s;
+            color: variables.$action_color_darker;
+
+            .content {
+                @include mixins.flex_center;
+                flex-direction: column;
+                width: 300px; height: 150px;
+                gap: 10px;
+
+                .icon {
+                    @include mixins.social_media_icon(100px, 94px, false);
+                }
+            }
+
+            &:hover {
+                transform: scale(1.0);
+                margin-top: -10px;
+                padding-bottom: 10px;
+            }
+        }
+        
+        &:hover a:not(:hover) {
+            opacity: .4;
+            filter: blur(2px);
+        }
+    }
+}
+
+section#cv {
+    grid-template-areas: 
+        "title right"
+        "cv cv";
+    
+    .section_title {
+        position: relative;
+        top: 0;
+    }
+
+    .container {
+        grid-area: cv;
+        width: 100%;
+        @include mixins.flex_center;
+        gap: 20px;
+
+        a {
+            @include mixins.cta_button;
+            transform: scale(1.2);
         }
     }
 }

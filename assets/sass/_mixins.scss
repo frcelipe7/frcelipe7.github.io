@@ -23,6 +23,7 @@
     transition: .2s;
     font-size: 11pt;
     text-decoration: none;
+    user-select: none;
 
     &:hover {
         background-color: variables.$principal_hover;
@@ -40,6 +41,7 @@
     
     img {
         position: absolute;
+        user-select: none;
 
         &:nth-child(1) {
             animation: girar 180s linear infinite;
@@ -60,7 +62,7 @@
     }    
 }
 
-@mixin social_media_icon($size_a: 30px, $size_svg:26px) {
+@mixin social_media_icon($size_a: 30px, $size_svg:26px, $hover_animation: true) {
     @include flex_center;
     background-color: variables.$light_low_contrast;
     width: $size_a; height: $size_a;
@@ -72,8 +74,10 @@
         width: $size_svg; height: $size_svg;
     }
 
-    &:hover {
-        opacity: 0.7;
-        transform: scale(0.97);
+    @if $hover_animation {
+        &:hover {
+            opacity: 0.7;
+            transform: scale(0.97);
+        }
     }
 }
