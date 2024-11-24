@@ -28,6 +28,25 @@ main {
     width: 100%; height: auto;
     position: relative;
 
+    .buttons {
+        @include mixins.flex_center;
+        width: 35px; height: 200px;
+        flex-direction: column;
+        position: sticky;
+        left: 20px;
+        top: calc(100vh - 200px - 20px);
+        gap: 5px;
+        z-index: 1000;
+
+        img {
+            width: 44px; height: auto;
+        }
+
+        a {
+            @include mixins.social_media_icon(44px, 38px);
+        }
+    }
+
     section {
         width: 100%; min-height: 80vh;
         padding: 100px;
@@ -46,7 +65,6 @@ main {
             position: sticky;
             top: 100px;
             padding-bottom: 40px;
-            
             
             h2 {
                 font-weight: 500;
@@ -166,10 +184,10 @@ nav {
 ////////////////    SECTION INICIO    ////////////////
 section#inicio {
     height: 100vh;
-    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: -200px; // pra compensar o height dos botoes laterais
 
     .left {
         width: 50%;
@@ -189,25 +207,6 @@ section#inicio {
 
         p {
             font-weight: 400;
-        }
-
-        .buttons {
-            @include mixins.flex_center;
-            width: 35px; height: 200px;
-            flex-direction: column;
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            gap: 5px;
-            z-index: 1000;
-
-            img {
-                width: 44px; height: auto;
-            }
-
-            a {
-                @include mixins.social_media_icon(44px, 38px);
-            }
         }
     }
 
@@ -230,14 +229,32 @@ section#inicio {
             transition: .2s;
             text-decoration: none;
             color: #000000;
-
+            
             span {
                 margin-right: 5px;
                 color: variables.$principal_color;
             }
+            
+            .txt {
+                position: relative;
+                margin-bottom: -2px;
+                padding-right: 5px;
+                
+                .line {
+                    width: 0;
+                    height: 2px;
+                    background-color: variables.$principal_color;
+                    transition: .2s;
+                    position: absolute;
+                }
+            }
 
             &:hover {
                 color: variables.$principal_hover;
+
+                .line {
+                    width: 100%;
+                }
             }
         }
     }
@@ -548,4 +565,13 @@ section#cv {
             transform: scale(1.2);
         }
     }
+}
+
+footer {
+    width: auto; height: auto;
+    background-color: variables.$principal_color;
+    background-color: variables.$principal_color;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
 }

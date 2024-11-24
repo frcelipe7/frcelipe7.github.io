@@ -31,6 +31,42 @@ main {
   height: auto;
   position: relative;
 }
+main .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 200px;
+  flex-direction: column;
+  position: sticky;
+  left: 20px;
+  top: calc(100vh - 200px - 20px);
+  gap: 5px;
+  z-index: 1000;
+}
+main .buttons img {
+  width: 44px;
+  height: auto;
+}
+main .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.1s;
+}
+main .buttons a svg {
+  width: 38px;
+  height: 38px;
+}
+main .buttons a:hover {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
 main section {
   width: 100%;
   min-height: 80vh;
@@ -178,10 +214,10 @@ nav .right .contato:hover {
 
 section#inicio {
   height: 100vh;
-  margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: -200px;
 }
 section#inicio .left {
   width: 50%;
@@ -199,42 +235,6 @@ section#inicio .left h1 {
 }
 section#inicio .left p {
   font-weight: 400;
-}
-section#inicio .left .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 200px;
-  flex-direction: column;
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  gap: 5px;
-  z-index: 1000;
-}
-section#inicio .left .buttons img {
-  width: 44px;
-  height: auto;
-}
-section#inicio .left .buttons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFFFFF;
-  width: 44px;
-  height: 44px;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: 0.1s;
-}
-section#inicio .left .buttons a svg {
-  width: 38px;
-  height: 38px;
-}
-section#inicio .left .buttons a:hover {
-  opacity: 0.7;
-  transform: scale(0.97);
 }
 section#inicio .code_img {
   display: flex;
@@ -281,8 +281,23 @@ section#inicio .right a span {
   margin-right: 5px;
   color: #106BA2;
 }
+section#inicio .right a .txt {
+  position: relative;
+  margin-bottom: -2px;
+  padding-right: 5px;
+}
+section#inicio .right a .txt .line {
+  width: 0;
+  height: 2px;
+  background-color: #106BA2;
+  transition: 0.2s;
+  position: absolute;
+}
 section#inicio .right a:hover {
   color: #004D7B;
+}
+section#inicio .right a:hover .line {
+  width: 100%;
 }
 
 section#about_me .container {
@@ -577,6 +592,16 @@ section#cv .container a {
 }
 section#cv .container a:hover {
   background-color: #004D7B;
+}
+
+footer {
+  width: auto;
+  height: auto;
+  background-color: #106BA2;
+  background-color: #106BA2;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
