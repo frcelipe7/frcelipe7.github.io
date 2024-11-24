@@ -128,7 +128,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1001;
   padding: 20px;
   background-color: rgba(237, 237, 237, 0.7176470588);
   backdrop-filter: blur(5px);
@@ -162,7 +162,11 @@ nav .left ul li {
   font-size: 10pt;
   padding: 0 10px;
 }
-nav .left ul li:hover {
+nav .left ul li a {
+  text-decoration: none;
+  color: #222222;
+}
+nav .left ul li a:hover {
   color: #004D7B;
 }
 nav .right .social_media {
@@ -605,12 +609,9 @@ section#cv .container a:hover {
 footer {
   width: auto;
   height: auto;
-  background-color: #004D7B;
-  background-color: #C3A289;
-  background-color: #c0c0c0;
+  border-top: 1px solid #000000;
   padding: 20px;
   margin-top: 20px;
-  border-radius: 10px 10px 0 0;
   gap: 20px;
   display: grid;
   grid-template-areas: "logo . ." "menu social_media buttons" "references references references" "developed_by developed_by developed_by";
@@ -619,7 +620,6 @@ footer h4 {
   font-size: 12pt;
   font-weight: 500;
   margin-bottom: 10px;
-  color: #FFFFFF;
 }
 footer .logo {
   grid-area: logo;
@@ -628,11 +628,14 @@ footer .logo {
   font-weight: 500;
   line-height: 20px;
   margin-right: 10px;
-  color: #000000;
+  color: #222222;
+  transform: scale(1.2);
+  margin-left: 6px;
+  margin-bottom: 15px;
 }
 footer .logo span {
   font-weight: 500;
-  color: #004D7B;
+  color: #106BA2;
 }
 footer .menu {
   grid-area: menu;
@@ -641,10 +644,9 @@ footer .menu {
   flex-direction: column;
 }
 footer .menu a {
-  color: #FFFFFF;
+  color: #106BA2;
   text-decoration: none;
   transition: 0.2s;
-  font-weight: 300;
 }
 footer .menu a:hover {
   opacity: 0.5;
@@ -662,7 +664,7 @@ footer .social_media li a {
   align-items: center;
   gap: 5px;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #106BA2;
   font-weight: 300;
   font-size: 12pt;
   transition: 0.2s;
@@ -692,26 +694,12 @@ footer .social_media li a:hover {
 footer .buttons {
   grid-area: buttons;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
 }
 footer .buttons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: 40px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #EDEDED;
-  color: #222222;
-  cursor: pointer;
-  transition: 0.2s;
-  font-size: 11pt;
-  text-decoration: none;
-  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -732,9 +720,6 @@ footer .buttons a {
   padding: 5px 10px;
 }
 footer .buttons a:hover {
-  background-color: #FFFFFF;
-}
-footer .buttons a:hover {
   background-color: #004D7B;
 }
 footer .buttons a:hover {
@@ -751,6 +736,9 @@ footer .references a {
 }
 footer .references a:hover {
   opacity: 0.5;
+}
+footer .references span {
+  font-weight: 500;
 }
 footer .developed_by {
   grid-area: developed_by;
