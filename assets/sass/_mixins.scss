@@ -12,13 +12,13 @@
     justify-content: space-between;
 }
 
-@mixin cta_button {
+@mixin cta_button($bg: variables.$principal_color, $bg_hover: variables.$principal_hover, $color: variables.$light_color) {
     @include flex_center;
     width: auto; height: 40px;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: variables.$principal_color;
-    color: variables.$light_color;
+    background-color: $bg;
+    color: $color;
     cursor: pointer;
     transition: .2s;
     font-size: 11pt;
@@ -26,7 +26,7 @@
     user-select: none;
 
     &:hover {
-        background-color: variables.$principal_hover;
+        background-color: $bg_hover;
     }
 }
 
@@ -79,5 +79,19 @@
             opacity: 0.7;
             transform: scale(0.97);
         }
+    }
+}
+
+@mixin logo($text_color: variables.$dark_color, $span_color: variables.$principal_color) {
+    width: fit-content;
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 20px;
+    margin-right: 10px;
+    color: $text_color;
+
+    span {
+        font-weight: 500;
+        color: $span_color;
     }
 }

@@ -123,16 +123,7 @@ nav {
 
     .left {
         .logo {
-            width: fit-content;
-            font-size: 12pt;
-            font-weight: 500;
-            line-height: 20px;
-            margin-right: 10px;
-    
-            span {
-                font-weight: 500;
-                color: variables.$principal_color;
-            }
+            @include mixins.logo;
         }
 
         ul {
@@ -451,7 +442,7 @@ section#projects {
             flex-direction: column;
             gap: 30px;
             position: sticky;
-            top: 230px;
+            top: 40%;
             height: fit-content;
 
             .top {
@@ -515,18 +506,20 @@ section#contacts {
         width: 100%;
         @include mixins.flex_center;
         margin-top: 100px;
+
         a {
             transition: .15s;
             color: variables.$action_color_darker;
-
+            flex: 1;
+            
             .content {
                 @include mixins.flex_center;
                 flex-direction: column;
-                width: 300px; height: 150px;
+                height: 150px;
                 gap: 10px;
 
                 .icon {
-                    @include mixins.social_media_icon(100px, 94px, false);
+                    @include mixins.social_media_icon(100px, 86px, false);
                 }
             }
 
@@ -563,15 +556,144 @@ section#cv {
         a {
             @include mixins.cta_button;
             transform: scale(1.2);
+
+            span {
+                font-weight: 300;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                transform: scale(1.18);
+            }
         }
     }
 }
 
 footer {
     width: auto; height: auto;
-    background-color: variables.$principal_color;
-    background-color: variables.$principal_color;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 20px;
+    background-color: variables.$principal_hover;
+    background-color: variables.$secondary_color;
+    background-color: #c0c0c0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px 10px 0 0;
+    gap: 20px;
+    display: grid;
+    grid-template-areas: 
+        "logo . ."
+        "menu social_media buttons"
+        "references references references"
+        "developed_by developed_by developed_by";
+        ;
+    
+    h4 {
+        font-size: 12pt;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: variables.$light_low_contrast;
+    }
+
+    .logo {
+        grid-area: logo;
+        @include mixins.logo(#000000, variables.$principal_hover);
+    }
+
+    .menu {
+        grid-area: menu;
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+
+        a {
+            color: variables.$light_low_contrast;
+            text-decoration: none;
+            transition: .2s;
+            font-weight: 300;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    .social_media {
+        grid-area: social_media;
+        gap: 10px;
+        list-style: none;
+
+        li {
+            margin-bottom: 10px;
+            
+            a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: variables.$light_low_contrast;
+                font-weight: 300;
+                font-size: 12pt;
+                transition: .2s;
+
+                .icon {
+                    @include mixins.social_media_icon(24px, 20px);
+                }
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        grid-area: buttons;
+        @include mixins.flex_center;
+        gap: 10px;
+        flex-direction: column;
+
+        a {
+            @include mixins.cta_button(variables.$light_color, variables.$light_low_contrast, variables.$dark_color);
+            @include mixins.cta_button(variables.$principal_hover, variables.$principal_hover);
+            font-weight: 400;
+            font-size: 12pt;
+            width: 100%;
+            padding: 5px 10px;
+
+            &:hover {
+                transform: scale(.98);
+            }
+        }
+    }
+
+    .references {
+        grid-area: references;
+        font-size: 9pt;
+
+        a {
+            color: #000000;
+            transition: .2s;
+            font-weight: 300;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    .developed_by {
+        grid-area: developed_by;
+        width: 100%;
+        text-align: center;
+        font-size: 10pt;
+        font-weight: 300;
+
+        a {
+            color: variables.$principal_hover;
+            transition: .2s;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
 }

@@ -143,6 +143,7 @@ nav .left .logo {
   font-weight: 500;
   line-height: 20px;
   margin-right: 10px;
+  color: #222222;
 }
 nav .left .logo span {
   font-weight: 500;
@@ -439,7 +440,7 @@ section#projects .container .cta {
   flex-direction: column;
   gap: 30px;
   position: sticky;
-  top: 230px;
+  top: 40%;
   height: fit-content;
 }
 section#projects .container .cta .top {
@@ -523,13 +524,13 @@ section#contacts .line {
 section#contacts .line a {
   transition: 0.15s;
   color: #2d85bc;
+  flex: 1;
 }
 section#contacts .line a .content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 300px;
   height: 150px;
   gap: 10px;
 }
@@ -545,8 +546,8 @@ section#contacts .line a .content .icon {
   transition: 0.1s;
 }
 section#contacts .line a .content .icon svg {
-  width: 94px;
-  height: 94px;
+  width: 86px;
+  height: 86px;
 }
 section#contacts .line a:hover {
   transform: scale(1);
@@ -593,15 +594,177 @@ section#cv .container a {
 section#cv .container a:hover {
   background-color: #004D7B;
 }
+section#cv .container a span {
+  font-weight: 300;
+  margin-right: 5px;
+}
+section#cv .container a:hover {
+  transform: scale(1.18);
+}
 
 footer {
   width: auto;
   height: auto;
-  background-color: #106BA2;
-  background-color: #106BA2;
-  padding: 30px;
-  margin: 20px;
-  border-radius: 20px;
+  background-color: #004D7B;
+  background-color: #C3A289;
+  background-color: #c0c0c0;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px 10px 0 0;
+  gap: 20px;
+  display: grid;
+  grid-template-areas: "logo . ." "menu social_media buttons" "references references references" "developed_by developed_by developed_by";
+}
+footer h4 {
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+footer .logo {
+  grid-area: logo;
+  width: fit-content;
+  font-size: 12pt;
+  font-weight: 500;
+  line-height: 20px;
+  margin-right: 10px;
+  color: #000000;
+}
+footer .logo span {
+  font-weight: 500;
+  color: #004D7B;
+}
+footer .menu {
+  grid-area: menu;
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+footer .menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: 0.2s;
+  font-weight: 300;
+}
+footer .menu a:hover {
+  opacity: 0.5;
+}
+footer .social_media {
+  grid-area: social_media;
+  gap: 10px;
+  list-style: none;
+}
+footer .social_media li {
+  margin-bottom: 10px;
+}
+footer .social_media li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 12pt;
+  transition: 0.2s;
+}
+footer .social_media li a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.1s;
+}
+footer .social_media li a .icon svg {
+  width: 20px;
+  height: 20px;
+}
+footer .social_media li a .icon:hover {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
+footer .social_media li a:hover {
+  opacity: 0.5;
+}
+footer .buttons {
+  grid-area: buttons;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+}
+footer .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #EDEDED;
+  color: #222222;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 11pt;
+  text-decoration: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #004D7B;
+  color: #EDEDED;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 11pt;
+  text-decoration: none;
+  user-select: none;
+  font-weight: 400;
+  font-size: 12pt;
+  width: 100%;
+  padding: 5px 10px;
+}
+footer .buttons a:hover {
+  background-color: #FFFFFF;
+}
+footer .buttons a:hover {
+  background-color: #004D7B;
+}
+footer .buttons a:hover {
+  transform: scale(0.98);
+}
+footer .references {
+  grid-area: references;
+  font-size: 9pt;
+}
+footer .references a {
+  color: #000000;
+  transition: 0.2s;
+  font-weight: 300;
+}
+footer .references a:hover {
+  opacity: 0.5;
+}
+footer .developed_by {
+  grid-area: developed_by;
+  width: 100%;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: 300;
+}
+footer .developed_by a {
+  color: #004D7B;
+  transition: 0.2s;
+}
+footer .developed_by a:hover {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=style.css.map */
