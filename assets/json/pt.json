@@ -1,0 +1,36 @@
+{
+    "menu": ["Sobre Mim", "Hard Skills", "Projetos", "Contatos", "Currículo"],
+    "cta": "Entre em contato",
+    "inicio": {
+        "greeting": "Olá, eu sou",
+        "desc": "Desenvolvedor web com experiência em Django e Javascript, além de Web Design, Figma e modelagem UML.",
+        "right": {
+            "cv": "Currículo disponível aqui",
+            "contato": "Entre em contato"
+        }
+    },
+    "sobre_mim": {
+        "title": "SOBRE MIM",
+        "description": [
+            "Olá, eu sou <span>Felipe Raphael</span>, desenvolvedor web e estou cursando bacharelado em <span>Engenharia de Software</span> na Universidade do Estado do Pará (UEPA).",
+            "Tenho experiência com <span>desenvolvimento de plataformas web</span> utilizando <span>Django, HTML, CSS, Javascript, Sass e Vue.js</span>. Além disso, possuo conhecimento em controle de versão com <span>Git e Github</span>, modelagem de sistemas com <span>UML</span> e design de interfaces com <span>Figma</span>.",
+            "Além disso, tenho experiência em <span>DevOps</span> como <span>configuração e deploy</span> de aplicações em servidores Linux, incluindo o <span>apontamento de domínio</span> e  configuração de virtual hosts. Futuramente pretendo me especializar em <span>Cloud</span> e <span>Docker.</span>"
+        ],
+        "conquistas": [
+            "CS50's Web Programming with Python and Javascript - HarvardX",
+            "3º lugar na fase regional da Maratona de Programação ICPC",
+            "Bacharelado em Engenharia de Software na Universidade do Estado do Pará - UEPA",
+            "Ensino médio integrado ao técnico em Eletroeletrônica - IFPA",
+            "Programa de Iniciação Científica Junior - PICJr",
+            "Menção Honrosa Olimpíada Brasileira de Matemática das Escolas Públicas - OBMEP",
+            "Medalha de Bronze na Olimpíada Brasileira de Astronomia e Astronáutica - OBA",
+            "Medalha de Bronze na Olimpíada Canguru de Matemática"
+        ]
+    },
+    "hard_skills": {
+        "title": "HARD SKILLS",
+        "description": [
+            
+        ]
+    },
+}

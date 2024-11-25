@@ -1,0 +1,790 @@
+@use "variables";
+@use "mixins";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+////////////////    DEFINICOES GERAIS    ////////////////
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+html, body {
+    width: 100%; 
+    scroll-behavior: smooth;
+    background-color: variables.$light_color;
+}
+
+iframe {display: none;}
+
+main {
+    width: 100%; height: auto;
+    position: relative;
+
+    .buttons {
+        @include mixins.flex_center;
+        width: 35px; height: 200px;
+        flex-direction: column;
+        position: sticky;
+        left: 20px;
+        top: calc(100vh - 200px - 20px);
+        gap: 5px;
+        z-index: 1000;
+
+        img {
+            width: 44px; height: auto;
+        }
+
+        a {
+            @include mixins.social_media_icon(44px, 38px);
+        }
+    }
+
+    section {
+        width: 100%; min-height: 80vh;
+        padding: 100px;
+        position: relative;
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        grid-template-areas: "title right";
+
+        .section_title {
+            width: 70%; height: fit-content;
+            grid-area: title;
+            border-top: 2px solid black;
+            position: sticky;
+            top: 100px;
+            padding-bottom: 40px;
+            
+            h2 {
+                font-weight: 500;
+                font-size: 25pt;
+                color: variables.$dark_color;
+                position: relative;
+                z-index: 1;
+            }
+            
+            span {
+                font-weight: 500;
+                text-wrap: nowrap;
+                position: absolute;
+                top: -15px;
+                left: -5px;
+                z-index: 0;
+                font-size: 50pt;
+                width: auto;
+                color: variables.$light_low_contrast;
+                opacity: .5;
+            }
+        }
+
+        .right {
+            grid-area: right;
+            width: 100%;
+
+            p.description {
+                margin-bottom: 20px;
+                font-weight: 300;
+
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+
+////////////////    NAV    ////////////////
+nav {
+    @include mixins.flex_space_between;
+    width: 100%; height: 70px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1001;
+    padding: 20px;
+    background-color: #edededb7;
+    backdrop-filter: blur(5px);
+
+    .left, .right {
+        display: flex;
+        align-items: end;
+    }
+
+    .left {
+        .logo {
+            @include mixins.logo;
+        }
+
+        ul {
+            display: flex;
+            height: 100%;
+
+            li {
+                list-style: none;
+                cursor: pointer;
+                user-select: none;
+                transition: .1s;
+                font-weight: 400;
+                font-size: 10pt;
+                padding: 0 10px;
+
+                a {
+                    text-decoration: none;
+                    color: variables.$dark_color;
+                    
+                    &:hover {
+                        color: variables.$principal_hover;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .right {
+        .social_media {
+            @include mixins.flex_center;
+            width: auto; height: 40px;
+            gap: 5px;
+
+            a {
+                @include mixins.social_media_icon;
+            }
+        }
+
+        .contato {
+            @include mixins.cta_button;
+            margin-left: 10px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+////////////////    SECTION INICIO    ////////////////
+section#inicio {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -200px; // pra compensar o height dos botoes laterais
+
+    .left {
+        width: 50%;
+
+        span {
+            font-size: 24pt;
+            font-weight: 400;
+            color: variables.$principal_color;
+        }
+
+        h1 {
+            font-size: 50pt;
+            font-weight: 500;
+            color: variables.$dark_color;
+            margin-top: -20px;
+        }
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+    .code_img {
+        @include mixins.code_img;
+    }
+
+    .right {
+        width: auto; height: 100vh;
+        z-index: 10;
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        padding-bottom: 40px;
+
+        .lang {
+            @include mixins.flex_center;
+            justify-content: start;
+
+            img {
+                width:auto; height: 15px;
+                object-fit: cover;
+                margin-bottom: -2px;
+            }
+
+            .ptbr {
+                margin-bottom: -2px;
+            }
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 24px;
+                transform: scale(.7);
+            }
+            
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .2s;
+                transition: .2s;
+            }
+            
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 2px;
+                bottom: 2px;
+                background-color: white;
+                -webkit-transition: .2s;
+                transition: .2s;
+            }
+            
+            input:checked + .slider {
+                background-color: variables.$action_color;
+            }
+            
+            input:focus + .slider {
+                box-shadow: 0 0 1px variables.$action_color;
+            }
+            
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+            
+            .slider.round {
+                border-radius: 34px;
+            }
+            
+            .slider.round:before {
+                border-radius: 50%;
+            }
+        }
+
+
+        a {
+            @include mixins.flex_center;
+            justify-content: start;
+            margin-top: 20px;
+            transition: .2s;
+            text-decoration: none;
+            color: #000000;
+            
+            span {
+                margin-right: 5px;
+                color: variables.$principal_color;
+            }
+            
+            .txt {
+                position: relative;
+                margin-bottom: -2px;
+                padding-right: 5px;
+                
+                .line {
+                    width: 0;
+                    height: 2px;
+                    background-color: variables.$principal_color;
+                    transition: .2s;
+                    position: absolute;
+                }
+            }
+
+            &:hover {
+                color: variables.$principal_hover;
+
+                .line {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+////////////////    SECTION ABOUT ME    ////////////////
+section#about_me {
+    .container {
+        padding-top: 70px;
+
+        .icon {
+            @include mixins.flex_space_between;
+            margin-bottom: 30px;
+
+            img {
+                max-width: 140px; max-height: 40px;
+                object-fit: contain;
+                mix-blend-mode: multiply;
+            }
+
+            p {
+                font-weight: 300;
+                width: 70%;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+////////////////    SECTION HARD SKILLS    ////////////////
+section#hard_skills {
+    ul {
+        list-style: none;
+        padding-top: 50px;
+
+        li {
+            margin-bottom: 5px;
+            font-weight: 300;
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .icons_container {
+        @include mixins.flex_space_between;
+        padding-top: 50px;
+
+        .github svg {
+            width: 35px; height: 35px;
+        }
+
+        svg {
+            width: 40px; height: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+////////////////    SECTION PROJECTS    ////////////////
+section#projects {
+    width: 100%;
+    display: block;
+
+    .section_title{
+        position: relative;
+        top: 0;
+        margin-bottom: 100px;
+        width: 34%;
+    }
+
+    .container {
+        width: 100%; height: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 4fr 1fr 1fr 4fr;
+        grid-template-rows: auto auto 20px auto auto 20px auto 20px auto;
+        grid-template-areas: 
+            "ia_ttt caminhos_trilhas caminhos_trilhas caminhos_trilhas"
+            ".      caminhos_trilhas caminhos_trilhas caminhos_trilhas"
+            ". . . ."
+    
+            "frequencia frequencia frequencia clima_tempo"
+            "frequencia frequencia frequencia ."
+            ". . . ."
+            
+            "afma afma new_job new_job"
+            ". . . ."
+    
+            "bio bio bio cta";
+        position: relative;
+        
+        .project {
+            width: 100%;
+            z-index: 1;
+
+            img {
+                width: 100%; height: auto;
+                border-radius: 10px;
+                box-shadow: -5px -5px 10px #0000001a;
+            }
+
+            .description {
+                font-size: 11pt
+            }
+
+            a {
+                color: variables.$action_color;
+            }
+
+            .bottom {
+                @include mixins.flex_space_between;
+                padding-top: 15px;
+                
+                a {
+                    font-size: 10pt;
+                }
+
+                .icons {
+                    @include mixins.flex_center;
+                    justify-content: end;
+                    gap: 5px;
+                    
+                    .icon {
+                        @include mixins.flex_center;
+                        width: 24px; height: 24px;
+                        background-color: variables.$light_low_contrast;
+                        border-radius: 50px;
+                        svg {
+                            width: 20px; height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ia_ttt {
+            grid-area: ia_ttt;
+        }
+    
+        .caminhos_trilhas {
+            grid-area: caminhos_trilhas;
+        }
+    
+        .frequencia {
+            grid-area: frequencia;
+        }
+    
+        .clima_tempo {
+            grid-area: clima_tempo;
+        }
+    
+        .afma {
+            grid-area: afma;
+        }
+    
+        .new_job {
+            grid-area: new_job;
+        }
+    
+        .bio {
+            grid-area: bio;
+        }
+    
+        .cta {
+            grid-area: cta;
+
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 30px;
+            position: sticky;
+            top: 40%;
+            height: fit-content;
+
+            .top {
+                z-index: 1;
+
+                span {
+                    font-size: 13pt;
+                    color: variables.$principal_color;
+                }
+
+                h2 {
+                    font-size: 22pt;
+                    font-weight: 500;
+                    line-height: 35px;
+                }
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 11pt;
+                z-index: 1;
+            }
+
+            .contato {
+                @include mixins.cta_button;
+                z-index: 1;
+            }
+
+            .code_img {
+                @include mixins.code_img;
+                top: 100px;
+                right: -250px;
+                transform: scale(.5);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+////////////////    SECTION CONTACTS    ////////////////
+section#contacts {
+    grid-template-areas: 
+        "title right"
+        "contatos contatos";
+    
+    .section_title {
+        position: relative;
+        top: 0;
+    }
+
+    .line {
+        grid-area: contatos;
+        width: 100%;
+        @include mixins.flex_center;
+        margin-top: 100px;
+
+        a {
+            transition: .15s;
+            color: variables.$action_color_darker;
+            flex: 1;
+            
+            .content {
+                @include mixins.flex_center;
+                flex-direction: column;
+                height: 150px;
+                gap: 10px;
+
+                .icon {
+                    @include mixins.social_media_icon(100px, 86px, false);
+                }
+            }
+
+            &:hover {
+                transform: scale(1.0);
+                margin-top: -10px;
+                padding-bottom: 10px;
+            }
+        }
+        
+        &:hover a:not(:hover) {
+            opacity: .4;
+            filter: blur(2px);
+        }
+    }
+}
+
+section#cv {
+    grid-template-areas: 
+        "title right"
+        "cv cv";
+    
+    .section_title {
+        position: relative;
+        top: 0;
+    }
+
+    .container {
+        grid-area: cv;
+        width: 100%;
+        @include mixins.flex_center;
+        gap: 20px;
+
+        a {
+            @include mixins.cta_button;
+            transform: scale(1.2);
+
+            span {
+                font-weight: 300;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                transform: scale(1.18);
+            }
+        }
+    }
+}
+
+footer {
+    width: auto; height: auto;
+    // background-color: variables.$principal_hover;
+    // background-color: variables.$secondary_color;
+    // background-color: #c0c0c0;
+    border-top: 1px solid #000000;
+    padding: 20px;
+    margin-top: 20px;
+    gap: 20px;
+    display: grid;
+    grid-template-areas: 
+        "logo . ."
+        "menu social_media buttons"
+        "references references references"
+        "developed_by developed_by developed_by";
+        ;
+    
+    h4 {
+        font-size: 12pt;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        grid-area: logo;
+        @include mixins.logo;
+        transform: scale(1.2);
+        margin-left: 6px;
+        margin-bottom: 15px;
+
+    }
+
+    .menu {
+        grid-area: menu;
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+
+        a {
+            color: variables.$principal_color;
+            text-decoration: none;
+            transition: .2s;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    .social_media {
+        grid-area: social_media;
+        gap: 10px;
+        list-style: none;
+
+        li {
+            margin-bottom: 10px;
+            
+            a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: variables.$principal_color;
+                font-weight: 300;
+                font-size: 12pt;
+                transition: .2s;
+
+                .icon {
+                    @include mixins.social_media_icon(24px, 20px);
+                }
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        grid-area: buttons;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start ;
+        gap: 10px;
+
+        a {
+            @include mixins.cta_button(variables.$principal_hover, variables.$principal_hover);
+            font-weight: 400;
+            font-size: 12pt;
+            width: 100%;
+            padding: 5px 10px;
+
+            &:hover {
+                transform: scale(.98);
+            }
+        }
+    }
+
+    .references {
+        grid-area: references;
+        font-size: 9pt;
+
+        a {
+            color: #000000;
+            transition: .2s;
+            font-weight: 300;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .developed_by {
+        grid-area: developed_by;
+        width: 100%;
+        text-align: center;
+        font-size: 10pt;
+        font-weight: 300;
+
+        a {
+            color: variables.$principal_hover;
+            transition: .2s;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+}
