@@ -118,18 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
     lang_switch.addEventListener("change", () => {
         if (lang_switch.checked) {
             // en
-            // console.log(translation[1].menu);
             a_download_cv.href = "assets/cv/felipe_resume.pdf";
             b_download_cv.href = "assets/cv/felipe_resume.pdf";
             cv_download_cv.href = "assets/cv/felipe_resume.pdf";
             changeLang(en);
         } else {
             // ptbr
-            // console.log(translation[0].menu);
-            changeLang(pt);
             a_download_cv.href = "assets/cv/cv_dev_felipe.pdf";
             b_download_cv.href = "assets/cv/cv_dev_felipe.pdf";
             cv_download_cv.href = "assets/cv/cv_dev_felipe.pdf";
+            changeLang(pt);
         };
     });
 });
