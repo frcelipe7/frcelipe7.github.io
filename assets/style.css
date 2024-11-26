@@ -326,10 +326,10 @@ section#inicio .right .lang .slider:before {
   transition: 0.2s;
 }
 section#inicio .right .lang input:checked + .slider {
-  background-color: #37B2FF;
+  background-color: #106BA2;
 }
 section#inicio .right .lang input:focus + .slider {
-  box-shadow: 0 0 1px #37B2FF;
+  box-shadow: 0 0 1px #106BA2;
 }
 section#inicio .right .lang input:checked + .slider:before {
   -webkit-transform: translateX(26px);

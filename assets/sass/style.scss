@@ -274,11 +274,11 @@ section#inicio {
             }
             
             input:checked + .slider {
-                background-color: variables.$action_color;
+                background-color: variables.$principal_color;
             }
             
             input:focus + .slider {
-                box-shadow: 0 0 1px variables.$action_color;
+                box-shadow: 0 0 1px variables.$principal_color;
             }
             
             input:checked + .slider:before {
