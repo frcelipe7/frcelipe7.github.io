@@ -26,10 +26,6 @@ html, body {
   background-color: #EDEDED;
 }
 
-iframe {
-  display: none;
-}
-
 main {
   width: 100%;
   height: auto;
@@ -48,9 +44,24 @@ main .buttons {
   gap: 5px;
   z-index: 1000;
 }
+@media (max-width: 480px) {
+  main .buttons {
+    width: 36px;
+    height: 180px;
+    top: calc(100dvh - 200px);
+    left: 100dvw;
+    margin-right: 20px;
+  }
+}
 main .buttons img {
   width: 44px;
   height: auto;
+}
+@media (max-width: 480px) {
+  main .buttons img {
+    width: 36px;
+    height: auto;
+  }
 }
 main .buttons a {
   display: flex;
@@ -71,6 +82,27 @@ main .buttons a:hover {
   opacity: 0.7;
   transform: scale(0.97);
 }
+@media (max-width: 480px) {
+  main .buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.1s;
+  }
+  main .buttons a svg {
+    width: 32px;
+    height: 32px;
+  }
+  main .buttons a:hover {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+}
 main section {
   width: 100%;
   min-height: 80vh;
@@ -83,6 +115,17 @@ main section {
   gap: 20px;
   grid-template-areas: "title right";
 }
+@media (max-width: 480px) {
+  main section {
+    min-height: 50vh;
+    padding: 20px;
+    margin-top: 0;
+    padding-top: 70px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "title" "right";
+  }
+}
 main section .section_title {
   width: 70%;
   height: fit-content;
@@ -92,12 +135,26 @@ main section .section_title {
   top: 100px;
   padding-bottom: 40px;
 }
+@media (max-width: 480px) {
+  main section .section_title {
+    width: 100%;
+    height: 50px;
+    top: 70px;
+    background-color: rgba(237, 237, 237, 0.7176470588);
+    backdrop-filter: blur(2px);
+  }
+}
 main section .section_title h2 {
   font-weight: 500;
   font-size: 25pt;
   color: #222222;
   position: relative;
   z-index: 1;
+}
+@media (max-width: 480px) {
+  main section .section_title h2 {
+    font-size: 20pt;
+  }
 }
 main section .section_title span {
   font-weight: 500;
@@ -110,6 +167,12 @@ main section .section_title span {
   width: auto;
   color: #FFFFFF;
   opacity: 0.5;
+}
+@media (max-width: 480px) {
+  main section .section_title span {
+    top: -6px;
+    font-size: 30pt;
+  }
 }
 main section .right {
   grid-area: right;
@@ -137,6 +200,11 @@ nav {
   background-color: rgba(237, 237, 237, 0.7176470588);
   backdrop-filter: blur(5px);
 }
+@media (max-width: 480px) {
+  nav {
+    padding: 10px;
+  }
+}
 nav .left, nav .right {
   display: flex;
   align-items: end;
@@ -157,6 +225,11 @@ nav .left ul {
   display: flex;
   height: 100%;
 }
+@media (max-width: 480px) {
+  nav .left ul {
+    display: none;
+  }
+}
 nav .left ul li {
   list-style: none;
   cursor: pointer;
@@ -172,6 +245,11 @@ nav .left ul li a {
 }
 nav .left ul li a:hover {
   color: #004D7B;
+}
+@media (max-width: 480px) {
+  nav .right {
+    display: none;
+  }
 }
 nav .right .social_media {
   display: flex;
@@ -228,13 +306,29 @@ section#inicio {
   justify-content: space-between;
   margin-top: -200px;
 }
+@media (max-width: 480px) {
+  section#inicio {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 section#inicio .left {
   width: 50%;
+}
+@media (max-width: 480px) {
+  section#inicio .left {
+    width: 100%;
+  }
 }
 section#inicio .left span {
   font-size: 24pt;
   font-weight: 400;
   color: #106BA2;
+}
+@media (max-width: 480px) {
+  section#inicio .left span {
+    font-size: 20pt;
+  }
 }
 section#inicio .left h1 {
   font-size: 50pt;
@@ -242,8 +336,21 @@ section#inicio .left h1 {
   color: #222222;
   margin-top: -20px;
 }
+@media (max-width: 480px) {
+  section#inicio .left h1 {
+    font-size: 40pt;
+    line-height: 60px;
+    margin-top: 0px;
+  }
+}
 section#inicio .left p {
   font-weight: 400;
+}
+@media (max-width: 480px) {
+  section#inicio .left p {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 section#inicio .code_img {
   display: flex;
@@ -267,6 +374,11 @@ section#inicio .code_img img:nth-child(1) {
 section#inicio .code_img img:nth-child(2) {
   animation: girar 240s linear infinite;
 }
+@media (max-width: 480px) {
+  section#inicio .code_img {
+    display: none;
+  }
+}
 section#inicio .right {
   width: auto;
   height: 100vh;
@@ -275,6 +387,14 @@ section#inicio .right {
   justify-content: end;
   flex-direction: column;
   padding-bottom: 40px;
+}
+@media (max-width: 480px) {
+  section#inicio .right {
+    height: fit-content;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: -80px;
+  }
 }
 section#inicio .right .lang {
   display: flex;
@@ -390,18 +510,40 @@ section#about_me .container .icon img {
   object-fit: contain;
   mix-blend-mode: multiply;
 }
+@media (max-width: 480px) {
+  section#about_me .container .icon img {
+    width: 80px;
+  }
+}
 section#about_me .container .icon p {
   font-weight: 300;
   width: 70%;
+}
+@media (max-width: 480px) {
+  section#about_me .container .icon p {
+    font-size: 10pt;
+    font-weight: 400;
+  }
 }
 
 section#hard_skills ul {
   list-style: none;
   padding-top: 50px;
 }
+@media (max-width: 480px) {
+  section#hard_skills ul {
+    padding-top: 30px;
+  }
+}
 section#hard_skills ul li {
   margin-bottom: 5px;
   font-weight: 300;
+}
+@media (max-width: 480px) {
+  section#hard_skills ul li {
+    font-size: 11pt;
+    font-weight: 400;
+  }
 }
 section#hard_skills ul li span {
   font-weight: 500;
@@ -411,6 +553,13 @@ section#hard_skills .icons_container {
   align-items: center;
   justify-content: space-between;
   padding-top: 50px;
+}
+@media (max-width: 480px) {
+  section#hard_skills .icons_container {
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+  }
 }
 section#hard_skills .icons_container .github svg {
   width: 35px;
@@ -431,6 +580,12 @@ section#projects .section_title {
   margin-bottom: 100px;
   width: 34%;
 }
+@media (max-width: 480px) {
+  section#projects .section_title {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
 section#projects .container {
   width: 100%;
   height: auto;
@@ -440,6 +595,13 @@ section#projects .container {
   grid-template-rows: auto auto 20px auto auto 20px auto 20px auto;
   grid-template-areas: "ia_ttt caminhos_trilhas caminhos_trilhas caminhos_trilhas" ".      caminhos_trilhas caminhos_trilhas caminhos_trilhas" ". . . ." "frequencia frequencia frequencia clima_tempo" "frequencia frequencia frequencia ." ". . . ." "afma afma new_job new_job" ". . . ." "bio bio bio cta";
   position: relative;
+}
+@media (max-width: 480px) {
+  section#projects .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+    grid-template-areas: "ia_ttt" "caminhos_trilhas" "frequencia" "clima_tempo" "afma" "new_job" "bio" "cta";
+  }
 }
 section#projects .container .project {
   width: 100%;
@@ -486,6 +648,19 @@ section#projects .container .project .bottom .icons .icon svg {
   width: 20px;
   height: 20px;
 }
+@media (max-width: 480px) {
+  section#projects .container .project .bottom .icons {
+    gap: 1px;
+  }
+  section#projects .container .project .bottom .icons .icon {
+    width: 16px;
+    height: 16px;
+  }
+  section#projects .container .project .bottom .icons .icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
 section#projects .container .ia_ttt {
   grid-area: ia_ttt;
 }
@@ -516,6 +691,14 @@ section#projects .container .cta {
   position: sticky;
   top: 40%;
   height: fit-content;
+}
+@media (max-width: 480px) {
+  section#projects .container .cta {
+    padding-bottom: 70px;
+    padding-top: 70px;
+    overflow: hidden;
+    width: calc(100% + 20px);
+  }
 }
 section#projects .container .cta .top {
   z-index: 1;
@@ -579,13 +762,38 @@ section#projects .container .cta .code_img img:nth-child(1) {
 section#projects .container .cta .code_img img:nth-child(2) {
   animation: girar 240s linear infinite;
 }
+@media (max-width: 480px) {
+  section#projects .container .cta .code_img {
+    top: 220px;
+    transform: scale(0.4);
+    right: -200px;
+  }
+}
 
 section#contacts {
   grid-template-areas: "title right" "contatos contatos";
 }
+@media (max-width: 480px) {
+  section#contacts {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "title" "right" "contatos";
+    gap: 10px;
+  }
+  section#contacts .right {
+    height: auto;
+    margin: 0;
+  }
+}
 section#contacts .section_title {
   position: relative;
   top: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 480px) {
+  section#contacts .section_title {
+    height: 70px;
+  }
 }
 section#contacts .line {
   grid-area: contatos;
@@ -594,6 +802,13 @@ section#contacts .line {
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+}
+@media (max-width: 480px) {
+  section#contacts .line {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: start;
+  }
 }
 section#contacts .line a {
   transition: 0.15s;
@@ -607,6 +822,13 @@ section#contacts .line a .content {
   flex-direction: column;
   height: 150px;
   gap: 10px;
+}
+@media (max-width: 480px) {
+  section#contacts .line a .content {
+    flex-direction: row;
+    height: auto;
+    padding: 10px 0;
+  }
 }
 section#contacts .line a .content .icon {
   display: flex;
@@ -623,22 +845,62 @@ section#contacts .line a .content .icon svg {
   width: 86px;
   height: 86px;
 }
+@media (max-width: 480px) {
+  section#contacts .line a .content .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.1s;
+  }
+  section#contacts .line a .content .icon svg {
+    width: 34px;
+    height: 34px;
+  }
+}
 section#contacts .line a:hover {
   transform: scale(1);
   margin-top: -10px;
   padding-bottom: 10px;
 }
+@media (max-width: 480px) {
+  section#contacts .line a:hover {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+}
 section#contacts .line:hover a:not(:hover) {
   opacity: 0.4;
   filter: blur(2px);
+}
+@media (max-width: 480px) {
+  section#contacts .line:hover a:not(:hover) {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 section#cv {
   grid-template-areas: "title right" "cv cv";
 }
+@media (max-width: 480px) {
+  section#cv {
+    grid-template-areas: "title" "right" "cv";
+    padding-bottom: 80px;
+  }
+}
 section#cv .section_title {
   position: relative;
   top: 0;
+}
+@media (max-width: 480px) {
+  section#cv .section_title {
+    height: 60px;
+  }
 }
 section#cv .container {
   grid-area: cv;
@@ -647,6 +909,11 @@ section#cv .container {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+@media (max-width: 480px) {
+  section#cv .container {
+    margin-top: 40px;
+  }
 }
 section#cv .container a {
   display: flex;
@@ -685,6 +952,11 @@ footer {
   gap: 20px;
   display: grid;
   grid-template-areas: "logo . ." "menu social_media buttons" "references references references" "developed_by developed_by developed_by";
+}
+@media (max-width: 480px) {
+  footer {
+    grid-template-areas: "logo ." "menu buttons" "social_media social_media" "references references" "developed_by developed_by";
+  }
 }
 footer h4 {
   font-size: 12pt;
