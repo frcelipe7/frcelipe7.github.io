@@ -24,8 +24,6 @@ html, body {
     background-color: variables.$light_color;
 }
 
-iframe {display: none;}
-
 main {
     width: 100%; height: auto;
     position: relative;
@@ -40,12 +38,27 @@ main {
         gap: 5px;
         z-index: 1000;
 
+        @include mixins.mq("mobile") {
+            width: 36px; height: 180px;
+            top: calc(100dvh - 200px);
+            left: 100dvw;
+            margin-right: 20px;
+        }
+
         img {
             width: 44px; height: auto;
+            
+            @include mixins.mq("mobile") {
+                width: 36px; height: auto;
+            }
         }
 
         a {
             @include mixins.social_media_icon(44px, 38px);
+
+            @include mixins.mq("mobile") {
+                @include mixins.social_media_icon(36px, 32px)
+            }
         }
     }
 
@@ -60,6 +73,19 @@ main {
         gap: 20px;
         grid-template-areas: "title right";
 
+        @include mixins.mq("mobile") {
+            min-height: 50vh;
+            padding: 20px;
+            margin-top: 0;
+            padding-top: 70px;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas: 
+                "title"
+                "right"
+            ;
+        }
+
         .section_title {
             width: 70%; height: fit-content;
             grid-area: title;
@@ -67,6 +93,13 @@ main {
             position: sticky;
             top: 100px;
             padding-bottom: 40px;
+
+            @include mixins.mq("mobile") {
+                width: 100%; height: 50px;
+                top: 70px;
+                background-color: #edededb7;
+                backdrop-filter: blur(2px);
+            }
             
             h2 {
                 font-weight: 500;
@@ -74,6 +107,10 @@ main {
                 color: variables.$dark_color;
                 position: relative;
                 z-index: 1;
+
+                @include mixins.mq("mobile") {
+                    font-size: 20pt;
+                }
             }
             
             span {
@@ -87,6 +124,11 @@ main {
                 width: auto;
                 color: variables.$light_low_contrast;
                 opacity: .5;
+
+                @include mixins.mq("mobile") {
+                    top: -6px;
+                    font-size: 30pt;
+                }
             }
         }
 
@@ -118,6 +160,11 @@ nav {
     background-color: #edededb7;
     backdrop-filter: blur(5px);
 
+    @include mixins.mq("mobile") {
+       padding: 10px; 
+    }
+    
+
     .left, .right {
         display: flex;
         align-items: end;
@@ -131,6 +178,10 @@ nav {
         ul {
             display: flex;
             height: 100%;
+
+            @include mixins.mq("mobile") {
+                display: none;
+            }
 
             li {
                 list-style: none;
@@ -156,6 +207,10 @@ nav {
     }
 
     .right {
+        @include mixins.mq("mobile") {
+            display: none;
+        }
+
         .social_media {
             @include mixins.flex_center;
             width: auto; height: 40px;
@@ -187,14 +242,27 @@ section#inicio {
     align-items: center;
     justify-content: space-between;
     margin-top: -200px; // pra compensar o height dos botoes laterais
+    
+    @include mixins.mq("mobile") {
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .left {
         width: 50%;
+
+        @include mixins.mq("mobile") {
+            width: 100%;
+        }
 
         span {
             font-size: 24pt;
             font-weight: 400;
             color: variables.$principal_color;
+
+            @include mixins.mq("mobile") {
+                font-size: 20pt;
+            }
         }
 
         h1 {
@@ -202,15 +270,30 @@ section#inicio {
             font-weight: 500;
             color: variables.$dark_color;
             margin-top: -20px;
+
+            @include mixins.mq("mobile") {
+                font-size: 40pt;
+                line-height: 60px;
+                margin-top: 0px;
+            }
         }
 
         p {
             font-weight: 400;
+
+            @include mixins.mq("mobile") {
+                width: 100%;
+                margin-top: 30px
+            }
         }
     }
 
     .code_img {
         @include mixins.code_img;
+
+        @include mixins.mq("mobile") {
+            display: none;
+        }
     }
 
     .right {
@@ -220,6 +303,13 @@ section#inicio {
         justify-content: end;
         flex-direction: column;
         padding-bottom: 40px;
+
+        @include mixins.mq("mobile") {
+            height: fit-content;
+            width: 100%;
+            margin-top: 40px;
+            margin-bottom: -80px;
+        }
 
         .lang {
             @include mixins.flex_center;
@@ -355,11 +445,20 @@ section#about_me {
                 max-width: 140px; max-height: 40px;
                 object-fit: contain;
                 mix-blend-mode: multiply;
+
+                @include mixins.mq("mobile") {
+                    width: 80px;
+                }
             }
 
             p {
                 font-weight: 300;
                 width: 70%;
+
+                @include mixins.mq("mobile") {
+                    font-size: 10pt;
+                    font-weight: 400;
+                }
             }
         }
 
@@ -380,9 +479,19 @@ section#hard_skills {
         list-style: none;
         padding-top: 50px;
 
+        @include mixins.mq("mobile") {
+            // display: none;
+            padding-top: 30px;
+        }
+
         li {
             margin-bottom: 5px;
             font-weight: 300;
+
+            @include mixins.mq("mobile") {
+                font-size: 11pt;
+                font-weight: 400;
+            }
 
             span {
                 font-weight: 500;
@@ -393,6 +502,12 @@ section#hard_skills {
     .icons_container {
         @include mixins.flex_space_between;
         padding-top: 50px;
+
+        @include mixins.mq("mobile") {
+            flex-wrap: wrap;
+            align-items: start;
+            justify-content: start;
+        }
 
         .github svg {
             width: 35px; height: 35px;
@@ -423,6 +538,11 @@ section#projects {
         top: 0;
         margin-bottom: 100px;
         width: 34%;
+
+        @include mixins.mq("mobile") {
+            width: 100%;
+            margin-bottom: 30px;
+        }
     }
 
     .container {
@@ -445,6 +565,14 @@ section#projects {
     
             "bio bio bio cta";
         position: relative;
+
+        @include mixins.mq("mobile") {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, auto);
+            grid-template-areas:
+                "ia_ttt" "caminhos_trilhas" "frequencia"
+                "clima_tempo" "afma" "new_job" "bio" "cta";
+        }
         
         .project {
             width: 100%;
@@ -482,8 +610,22 @@ section#projects {
                         width: 24px; height: 24px;
                         background-color: variables.$light_low_contrast;
                         border-radius: 50px;
+
                         svg {
                             width: 20px; height: 20px;
+                        }
+                    }
+
+                    @include mixins.mq("mobile") {
+                        gap: 1px;
+                        
+                        .icon {
+                            width: 16px; height: 16px;
+
+                            svg {
+                                width: 14px; height: 14px;
+    
+                            }
                         }
                     }
                 }
@@ -529,6 +671,13 @@ section#projects {
             top: 40%;
             height: fit-content;
 
+            @include mixins.mq("mobile") {
+                padding-bottom: 70px;
+                padding-top: 70px;
+                overflow: hidden;
+                width: calc(100% + 20px);
+            }
+
             .top {
                 z-index: 1;
 
@@ -560,6 +709,12 @@ section#projects {
                 top: 100px;
                 right: -250px;
                 transform: scale(.5);
+
+                @include mixins.mq("mobile") {
+                    top: 220px;
+                    transform: scale(.4);
+                    right: -200px;
+                }
             }
         }
     }
@@ -577,12 +732,29 @@ section#projects {
 ////////////////    SECTION CONTACTS    ////////////////
 section#contacts {
     grid-template-areas: 
-        "title right"
-        "contatos contatos";
+    "title right"
+    "contatos contatos";
+    
+    @include mixins.mq("mobile") {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "title" "right" "contatos";
+        gap: 10px;
+        
+        .right {
+            height: auto;
+            margin: 0;
+        }
+    }
     
     .section_title {
         position: relative;
         top: 0;
+        margin-bottom: 0;
+
+        @include mixins.mq("mobile") {
+            height: 70px;
+        }
     }
 
     .line {
@@ -590,6 +762,12 @@ section#contacts {
         width: 100%;
         @include mixins.flex_center;
         margin-top: 100px;
+
+        @include mixins.mq("mobile") {
+            margin-top: 0;
+            flex-direction: column;
+            align-items: start;
+        }
 
         a {
             transition: .15s;
@@ -602,8 +780,18 @@ section#contacts {
                 height: 150px;
                 gap: 10px;
 
+                @include mixins.mq("mobile") {
+                    flex-direction: row;
+                    height: auto;
+                    padding: 10px 0;
+                }
+
                 .icon {
                     @include mixins.social_media_icon(100px, 86px, false);
+
+                    @include mixins.mq("mobile") {
+                        @include mixins.social_media_icon(40px, 34px, false)
+                    }
                 }
             }
 
@@ -611,12 +799,22 @@ section#contacts {
                 transform: scale(1.0);
                 margin-top: -10px;
                 padding-bottom: 10px;
+
+                @include mixins.mq("mobile") {
+                    margin-top: 0;
+                    padding-bottom: 0;
+                }
             }
         }
         
         &:hover a:not(:hover) {
             opacity: .4;
             filter: blur(2px);
+
+            @include mixins.mq("mobile") {
+                opacity: 1;
+                filter: blur(0);
+            }
         }
     }
 }
@@ -625,10 +823,19 @@ section#cv {
     grid-template-areas: 
         "title right"
         "cv cv";
+
+    @include mixins.mq("mobile") {
+        grid-template-areas: "title" "right" "cv";
+        padding-bottom: 80px;
+    }
     
     .section_title {
         position: relative;
         top: 0;
+
+        @include mixins.mq("mobile") {
+            height: 60px;
+        }
     }
 
     .container {
@@ -636,6 +843,10 @@ section#cv {
         width: 100%;
         @include mixins.flex_center;
         gap: 20px;
+
+        @include mixins.mq("mobile") {
+            margin-top: 40px
+        }
 
         a {
             @include mixins.cta_button;
@@ -669,6 +880,16 @@ footer {
         "references references references"
         "developed_by developed_by developed_by";
         ;
+    
+    @include mixins.mq("mobile") {
+        grid-template-areas: 
+            "logo ."
+            "menu buttons"
+            "social_media social_media"
+            "references references"
+            "developed_by developed_by"
+        ;
+    }
     
     h4 {
         font-size: 12pt;
