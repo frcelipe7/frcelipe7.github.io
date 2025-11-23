@@ -621,10 +621,10 @@ section#contacts {
     }
 }
 
-section#cv {
+section#portfolio_section {
     grid-template-areas: 
         "title right"
-        "cv cv";
+        "portfolio_section portfolio_section";
     
     .section_title {
         position: relative;
@@ -632,7 +632,7 @@ section#cv {
     }
 
     .container {
-        grid-area: cv;
+        grid-area: portfolio_section;
         width: 100%;
         @include mixins.flex_center;
         gap: 20px;

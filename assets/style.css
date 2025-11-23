@@ -633,22 +633,22 @@ section#contacts .line:hover a:not(:hover) {
   filter: blur(2px);
 }
 
-section#cv {
-  grid-template-areas: "title right" "cv cv";
+section#portfolio_section {
+  grid-template-areas: "title right" "portfolio_section portfolio_section";
 }
-section#cv .section_title {
+section#portfolio_section .section_title {
   position: relative;
   top: 0;
 }
-section#cv .container {
-  grid-area: cv;
+section#portfolio_section .container {
+  grid-area: portfolio_section;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-section#cv .container a {
+section#portfolio_section .container a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -665,14 +665,14 @@ section#cv .container a {
   user-select: none;
   transform: scale(1.2);
 }
-section#cv .container a:hover {
+section#portfolio_section .container a:hover {
   background-color: #004D7B;
 }
-section#cv .container a span {
+section#portfolio_section .container a span {
   font-weight: 300;
   margin-right: 5px;
 }
-section#cv .container a:hover {
+section#portfolio_section .container a:hover {
   transform: scale(1.18);
 }
 
